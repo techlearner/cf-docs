@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/tools/deploying-apps.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | Deploying and Managing Applications' property='og:title'>
+<meta content='Managing Applications on Cloud Foundry' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | Deploying and Managing Applications</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Tools</h1>
+<p class='sub-head'>Deploying and Managing Applications</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Managing Applications on Cloud Foundry</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/overview" rel="tag">overview</a><a href="/tags/vmc" rel="tag">vmc</a><a href="/tags/sts" rel="tag">sts</a><a href="/tags/maven" rel="tag">maven</a><a href="/tags/roo" rel="tag">roo</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-08-30
+</span>
+</p>
+<div id='social-share'></div>
+<p>In the context of Cloud Foundry, deploying an application simply means making it available for users to start using.   When you deploy an application, you push the actual application bits (such as a WAR file in the case of Spring Java) to your target cloud, specify the required application configuration such as the deployment URL and required memory, and binding any required services such as MySQL.  Cloud Foundry then stages the application, starts it, and makes it available at the specified URL so users can use it.</p>
+
+<p><strong>Subtopics</strong></p>
+
+<ul>
+<li><a href="#using-vmc">Using VMC</a></li>
+  <li><a href="#using-sts">Using STS</a></li>
+  <li><a href="#using-maven">Using Maven</a></li>
+  <li><a href="#using-roo">Using Roo</a></li>
+</ul><h2 id="using-vmc">Using VMC</h2>
+
+<p>The following user scenarios are described in this documentation:</p>
+
+<ul>
+<li><a href="#deploying-an-application-that-does-not-require-a-service">Deploying an Application That Does Not Require a Service</a></li>
+  <li><a href="#deploying-an-application-that-requires-one-service">Deploying an Application That Requires One Service</a></li>
+  <li><a href="#deploying-an-application-that-requires-multiple-services">Deploying an Application That Requires Multiple Services</a></li>
+  <li><a href="#deploying-in-non-interactive-mode">Deploying in Non-Interactive Mode</a></li>
+  <li><a href="#managing-the-application-lifecycle-stop-start-restart-delete-rename">Managing the Application Lifecycle (Stop, Start, Restart, Delete, Rename)</a></li>
+  <li><a href="#updating-the-deployment-bits">Updating The Deployment Bits</a></li>
+  <li><a href="#avoiding-downtime-when-updating-the-deployment-bits">Avoiding Downtime When Updating The Deployment Bits</a></li>
+  <li><a href="#monitoring-and-configuring-a-deployment-scaling-and-memory-management">Monitoring and Configuring A Deployment (Scaling and Memory Management)</a></li>
+</ul><h2 id="deploying-an-application-that-does-not-require-a-service">Deploying an Application That Does Not Require a Service</h2>
+
+<p>You use the <code>vmc push</code> command to deploy applications using VMC.  By default, <code>vmc</code> interactively prompts for the required deployment information; alternatively you can specify parameters to override the defaults or run in non-interactive mode.</p>
+
+<p>The simplest deployment example is to run <code>vmc push</code> with no parameters to deploy an application that does not require any services to be bound to it.  The <code>vmc push</code> command will prompt for all required information.  The following example shows the output from deploying a very simple Spring application that is packaged in a WAR file called <code>hello.war</code>; see the text after the example for additional information:</p>
+
+<pre class="terminal">
+    prompt$ vmc push
+
+    Would you like to deploy from the current directory? [Yn]:
+    Application Name: hello
+    Application Deployed URL: 'hello.cloudfoundry.com'? hello-js.cloudfoundry.com
+    Detected a Java SpringSource Spring Application, is this correct? [Yn]:
+    Memory Reservation [Default:512M] (64M, 128M, 256M, 512M or 1G)
+    Creating Application: OK
+    Would you like to bind any services to 'hello'? [yN]:
+    Uploading Application:
+      Checking for available resources: OK
+      Processing resources: OK
+      Packing application: OK
+      Uploading (4K): OK
+    Push Status: OK
+
+    Staging Application: OK
+    Starting Application: OK
+
+</pre>
+
+<p>Go to the specified deployment URL in your browser to start using the application.  In the example above, that would be:</p>
+
+<pre><code>    http://hello-js.cloudfoundry.com
+</code></pre>
+
+<p>Note the following about the preceding <code>vmc push</code> example:</p>
+
+<ul>
+<li>The default value of yes/no prompts is shown in capital letters at the end of the prompt; for example, if the default answer is No, then the prompt ends in <code>[yN]</code>.</li>
+  <li>You can deploy from the current directory in which you are running VMC, or specify a different directory. This directory is the location of the actual application bits, such as the <code>hello.war</code> file.   <strong>Note</strong> that <code>vmc push</code> deploys ALL artifacts in the specified directory, so be sure that only those files you want deployed are physically located in the directory.</li>
+  <li>The name of the application is the one you use to identify it as you mange its lifecycle, such as stopping it, adding memory to it, and so on.   The scope of the name is your Cloud Foundry account, which means the name should be unique as far as your account but does not need to be unique across the entire Cloud Foundry target.</li>
+  <li>By default, the deployment URL is the application name along with the target (for example, <code>cloudfoundry.com</code>).  However, you must be sure to specify a deployment URL that is <em>unique</em> across the entire Cloud Foundry target, even though the name of the application must be unique only within the scope of your Cloud Foundry account.  This is why, in the example above, the deployment URL includes an identifier that makes it unique across the entire cloudfoundry.com Web site.</li>
+</ul><h2 id="deploying-an-application-that-requires-one-service">Deploying an Application That Requires One Service</h2>
+
+<p>The following example shows how to deploy an application that requires a service (in this case a MySQL service).   The application is called <code>hotels.war</code>.</p>
+
+<p>In our example, we will first create an instance of the MySQL service using the <code>vmc create-service</code> command, and then bind this service instance to the application when we deploy it with <code>vmc push</code>.u</p>
+
+<p>It is important to note that you do not need to change your existing application in any way for it to “find” the MySQL instance that Cloud Foundry created and to which the application is bound.  This is because Cloud Foundry uses an auto-reconfiguration mechanism that lets typical Spring applications consume services without changing anything in the application.</p>
+
+<ul>
+<li>Find the name of the MySQL service by running <code>vmc services</code> and noting the first column:</li>
+</ul><pre class="terminal">
+        prompt$ vmc services
+
+        ============== System Services ==============
+
+        +------------+---------+---------------------------------------+
+        | Service    | Version | Description                           |
+        +------------+---------+---------------------------------------+
+        | mongodb    | 2.0     | MongoDB NoSQL store                   |
+        | mysql      | 5.1     | MySQL database service                |
+        | postgresql | 9.0     | vFabric Postgres database service     |
+        | rabbitmq   | 2.4     | RabbitMQ messaging service            |
+        | redis      | 2.2     | Redis key-value store service         |
+        +------------+---------+---------------------------------------+
+
+        =========== Provisioned Services ============
+
+</pre>
+
+<ul>
+<li>Create a new instance of the <code>mysql</code> service and call it <code>mysql-js</code>:</li>
+</ul><pre class="terminal">
+prompt$ vmc create-service mysql mysql-js
+</pre>
+
+<ul>
+<li>Deploy the <code>hotels.war</code> application, but this time bind it to the <code>mysql-js</code> service instance:</li>
+</ul><pre class="terminal">
+        prompt$ vmc push
+
+        Would you like to deploy from the current directory? [Yn]: y
+        Application Name: hotels
+        Application Deployed URL: 'hotels.cloudfoundry.com'? hotels-js.cloudfoundry.com
+        Detected a Java Web Application, is this correct? [Yn]:
+        Memory Reservation [Default:512M] (64M, 128M, 256M, 512M or 1G)
+        Creating Application: OK
+        Would you like to bind any services to 'hotels'? [yN]: y
+        Would you like to use an existing provisioned service [yN]? y
+        The following provisioned services are available:
+        1. mysql-js
+        Please select one you wish to provision: 1
+        Binding Service: OK
+        Uploading Application:
+          Checking for available resources: OK
+          Packing application: OK
+          Uploading (12K): OK
+        Push Status: OK
+
+        Staging Application: OK
+
+        Starting Application: OK
+
+</pre>
+
+<p>You can also create a new instance of a service during the <code>vmc push</code> command by answer <code>N</code> to the prompt about using a provisioned service; in this case, the <code>vmc push</code> command prompts for information about the new service instance.</p>
+
+<h2 id="deploying-an-application-that-requires-multiple-services">Deploying an Application That Requires Multiple Services</h2>
+
+<p>The <a href="#deploying-an-application-that-requires-one-service">preceding section</a> described how to deploy an application using the <code>vmc push</code> command and bind a service (MySQL) to it at the same time.  However, you were only able to bind <em>one</em> service, but what if your application requires multiple services?  This section describes how to perform that task.</p>
+
+<p>This example extends the <a href="#deploying-an-application-that-requires-one-service">previous example</a> in that, in addition to binding the <code>mysql-js</code> service to the <code>hotels</code> application, it will also create and bind the MongoDB and RabbitMQ services.</p>
+
+<ul>
+<li>Create new instances of the <code>mysql</code>, <code>mongodb</code>, and <code>rabbitmq</code> services:</li>
+</ul><pre class="terminal">
+        prompt$ vmc create-service mysql mysql-js
+        prompt$ vmc create-service mongodb mongodb-js
+        prompt$ vmc create-service rabbitmq rabbitmq-js
+
+</pre>
+
+<ul>
+<li>Deploy the <code>hotels.war</code> application and bind the <code>mysql-js</code> service instance to it.  This time, however, be sure to specify the <code>--no-start</code> option so that Cloud Foundry does not stage or start the application:</li>
+</ul><pre class="terminal">
+        prompt$ vmc push --no-start
+
+        Would you like to deploy from the current directory? [Yn]: y
+        Application Name: hotels
+        ...
+        Uploading Application:
+        ...
+        Push Status: OK
+
+</pre>
+
+<ul>
+<li>Use the <code>vmc bind-service</code> to bind the two remaining services to the <code>hotels</code> application:</li>
+</ul><pre class="terminal">
+        prompt$ vmc bind-service mongodb-js hotels
+        prompt$ vmc bind-service rabbitmq-js hotels
+
+</pre>
+
+<ul>
+<li>Start the application:</li>
+</ul><pre class="terminal">
+        prompt$ vmc start hotels
+
+        Staging Application: OK
+        Starting Application: OK
+
+</pre>
+
+<h2 id="deploying-in-non-interactive-mode">Deploying in Non-Interactive Mode</h2>
+
+<p>Use the <code>-n</code> option of <code>vmc push</code> to deploy an application in non-interactive mode.   The only other requirement is that you specify the name of the application.</p>
+
+<p>If you specify no other options, then Cloud Foundry uses all the default values when deploying the application.  For example, if you execute the following command:</p>
+
+<pre class="terminal">
+    prompt$ vmc push hotels -n
+
+</pre>
+
+<p>then Cloud Foundry does the following:</p>
+
+<ul>
+<li>Deploys all artifacts in the current directory as part of the <code>hotels</code> application.</li>
+  <li>Uses the deployment URL<code>hotels.cloudfoundry.com</code> (assuming your target is the publicly-hosted Cloud Foundry.)</li>
+  <li>Creates a single instance of the deployed application.</li>
+  <li>Does <em>not</em> bind any services to the application.</li>
+  <li>Auto-detects the programming framework (such as Spring or Ruby)</li>
+  <li>Reserves 512 MB of memory for the application</li>
+  <li>Automatically starts the application after staging it.</li>
+</ul><p>You can use additional options to change the default values of the deployment, and still deploy in non-interactive mode.  For example, you can change the deployment URL using the <code>--url</code> option, the reserved memory using the <code>--mem</code> option, and specify that the application not start with the following command:</p>
+
+<pre class="terminal">
+    prompt$ vmc push hotels -n --url hotels-js.cloudfoundry.com --mem 256 --no-start
+
+</pre>
+
+<p>See <a href="/tools/vmc/vmc-quick-ref.html#deploying-applications">VMC Quick Reference Guide</a> for the full list of parameters you can specify for the <code>vmc push</code> command.</p>
+
+<h2 id="managing-the-application-lifecycle-stop-start-restart-delete-rename">Managing the Application Lifecycle (Stop, Start, Restart, Delete, Rename)</h2>
+
+<p>Managing the lifecycle of your application after you have deployed it is easy; just use the appropriate VMC command to stop, start, and restart it.  For example, to stop and then start an application:</p>
+
+<pre class="terminal">
+    prompt$ vmc stop hotels
+    prompt$ vmc start hotels
+
+</pre>
+
+<p>Or to do the same task with one command:</p>
+
+<pre class="terminal">
+    prompt$ vmc restart hotels
+
+</pre>
+
+<p>It is important to note that when Cloud Foundry restarts an application, it creates an entire new virtual infrastructure for it.   Although this is typically transparent to the application, one situation in which this is relevant is if the application created local files on disk when it was previously running.  At restart, these files will be completely lost because Cloud Foundry creates a new virtual disk.  If the application requires that these files be available, even after a restart, then your application should use a data service such as MongoDB which will ensure that the files are always available.</p>
+
+<p>To rename an application, use the <code>vmc rename</code> command, specifying the existing name and then the new name.  For example:</p>
+
+<pre class="terminal">
+prompt$ vmc rename hotels hotels-new-name
+</pre>
+
+<p>The <code>vmc rename</code> command changes the internal name of the application; it does not change the deployment URL that you use to run the application.  For that you would use <code>vmc map</code>. See <a href="#changing-the-deployment-url">Changing the Deployment URL</a>.</p>
+
+<p>To delete an application, and free up all resources associated with the application, use the <code>vmc delete</code> command:</p>
+
+<pre class="terminal">
+prompt$ vmc delete hotels
+</pre>
+
+<h2 id="updating-the-deployment-bits">Updating The Deployment Bits</h2>
+
+<p>Use the <code>vmc update &lt;appname&gt;</code> command to update the “bits” that make up an application, such as the packaged WAR file for a Java Spring applications.</p>
+
+<p>When Cloud Foundry updates an application, it first stops it, makes the change, and then starts it again.  This means that the application will be unavailable for a short period of time and existing user sessions will be deleted.  During the iterative development cycle of an application, this might not be a problem, but in production scenarios this may be unaccaptable.  See <a href="#avoiding-downtime-when-updating-the-deployment-bits">Avoiding Downtime When Updating The Deployment Bits</a> for a useful procedure to avoid this short downtime.</p>
+
+<p>Follow these steps to update your application:</p>
+
+<ul>
+<li>Use <code>vmc apps</code> to get the exact name of your application; the first column of the output lists the name.  For example:</li>
+</ul><pre class="terminal">
+        prompt$ vmc apps
+
+        +-------------+----+---------+----------------------------+----------+
+        | Application | #  | Health  | URLS                       | Services |
+        +-------------+----+---------+----------------------------+----------+
+        | hello       | 1  | RUNNING | hello-js.cloudfoundry.com  |          |
+        | hotels      | 1  | RUNNING | hotels-js.cloudfoundry.com |          |
+        +-------------+----+---------+----------------------------+----------+
+
+</pre>
+
+<ul>
+<li>In your command prompt (Windows) or terminal window (Linux), change to the directory that contains your updated application bits.  Be sure the directory contains <em>only</em> the files and artifacts that you want to deploy because VMC pushes all files in the directory.</li>
+</ul><pre class="terminal">
+prompt$ cd /usr/bob/sample-apps/hotels
+</pre>
+
+<ul>
+<li>Use <code>vmc update</code> to update your application:</li>
+</ul><pre class="terminal">
+prompt$ vmc update hotels
+</pre>
+
+<pre><code>Check the output of the command to ensure the application started without errors, then start using the updated application.
+</code></pre>
+
+<h2 id="avoiding-downtime-when-updating-the-deployment-bits">Avoiding Downtime When Updating The Deployment Bits</h2>
+
+<p>The method for updating an application without any downtime exploits the fact that in Cloud Foundry you can map a single application to multiple deployment URLs, and similarly, map multiple applications to the same deployment URL.   So rather than updating the application directly, we will create a new application, associate it with the existing URL, then <em>disassociate the mapping of the old application to the URL</em>, then delete the old application.</p>
+
+<p>In the following example, the existing application is called <code>hotels</code> and its deployment URL is <code>hotels.cloudfoundry.com</code>, and you want to new user sessions to start using the new application seamlessly, without existing users losing their connection.</p>
+
+<p>The exact steps are as follows:</p>
+
+<ul>
+<li>In your command prompt or terminal window, change to the directory that contains the updated application “bits”.  For example:</li>
+</ul><pre class="terminal">
+prompt$ cd /usr/bob/sample-apps/hotels
+</pre>
+
+<ul>
+<li>Create a new application using the <code>vmc push</code> command, call it something different from the existing application, such as <code>hotels-new</code> and also specify that its deployment URL be something different, such as <code>hotels-new.cloudfoundry.com</code>:</li>
+</ul><pre class="terminal">
+prompt$ vmc push hotels-new
+</pre>
+
+<pre><code>Be sure you bind any required services, such as MySQL or RabbitMQ.  Use the same service instances that the existing application is currently using.
+</code></pre>
+
+<ul>
+<li>
+    <p>In a browser, go to the new deployment URL to test that the newly deployed application is working correctly, and that it is indeed the updated version.</p>
+
+    <p>In our example, the deployment URL of the new application is <code>http://hotels-new.cloudfoundry.com</code>.</p>
+  </li>
+  <li>
+    <p>Associate the new application with the <em>existing</em> deployment URL using the <code>vmc map</code> command.  For example:</p>
+  </li>
+</ul><pre class="terminal">
+prompt$ vmc map hotels-new hotels.cloudfoundry.com
+</pre>
+
+<pre><code>At this point, because the same deployment URL maps to two different applications, new user sessions might go to *either* the old or the new application.
+
+You can test this by constantly refreshing the `http://hotels.cloudfoundry.com` URL; some of the time you will be directed to the old application, but some of the time to the new.  Be sure, however, that you *sometimes* are directed to the new version.
+
+You can also see this multiple URL association by executing `vmc apps`:
+</code></pre>
+
+<pre class="terminal">
+    prompt$ vmc apps
+
+    +-------------+----+---------+-----------------------------------------+--------------+
+    | Application | #  | Health  | URLS                                    | Services     |
+    +-------------+----+---------+-----------------------------------------+--------------+
+    | hotels      | 1  | RUNNING | hotels.cloudfoundry.com                 | mysql-hotels |
+    | hotels-new  | 1  | RUNNING | hotels-new.cloudfoundry.com,            |              |
+    |             |    |         |    hotels.cloudfoundry.com              | mysql-hotels |
+    +-------------+----+---------+-----------------------------------------+--------------+
+
+</pre>
+
+<ul>
+<li>Disassociate the old application from its original deployment URL using the <code>vmc unmap</code> command:</li>
+</ul><pre class="terminal">
+prompt$ vmc unmap hotels hotels.cloudfoundry.com
+</pre>
+
+<pre><code>Note that this unmapping does *not* drop the existing user sessions to the old application; it simply stops new traffic to the old application so that new user sessions start using the new application.
+</code></pre>
+
+<ul>
+<li>
+    <p>Test that the original deployment URL (<code>http://hotels.cloudfoundry.com</code> in our example) is now always directing user sessions to the new application.</p>
+  </li>
+  <li>
+    <p>Disassociate the new application from its new deployment URL:</p>
+  </li>
+</ul><pre class="terminal">
+prompt$ vmc unmap hotels-new hotels-new.cloudfoundry.com
+</pre>
+
+<ul>
+<li>When you are sure that there are no longer any user sessions connected to the old application, you can delete it:</li>
+</ul><pre class="terminal">
+prompt$ vmc delete hotels
+</pre>
+
+<pre><code>Be sure you do **not** delete any shared service instances that are currently being used by the new application.
+
+You will now have a new internal name for the application, but it maps to the existing deployment URL that users are already familiar with.  You can view this new mapping with `vmc apps`:
+</code></pre>
+
+<pre class="terminal">
+        prompt$ vmc apps
+
+        +-------------+----+---------+-------------------------+-------------+
+        | Application | #  | Health  | URLS                    | Services    |
+        +-------------+----+---------+-------------------------+-------------+
+        | hotels-new  | 1  | RUNNING | hotels.cloudfoundry.com | mysql-hotels|
+        +-------------+----+---------+-------------------------+-------------+
+
+</pre>
+
+<h2 id="monitoring-and-configuring-a-deployment-scaling-and-memory-management">Monitoring and Configuring A Deployment (Scaling and Memory Management)</h2>
+
+<p>There are a number of VMC commands for configuring a deployed application, such as scaling it up or down by adding or removing instances, adding more memory, and changing its deployment URL.</p>
+
+<p>Use the <code>vmc apps</code> command to get a list of all your deployed applications; you will use the name of the application to get more information about it and possibly configure it:</p>
+
+<pre class="terminal">
+    prompt$ vmc apps
+
+    +-------------+----+---------+----------------------------+----------+
+    | Application | #  | Health  | URLS                       | Services |
+    +-------------+----+---------+----------------------------+----------+
+    | hello       | 1  | RUNNING | hello-js.cloudfoundry.com  |          |
+    | hotels      | 1  | RUNNING | hotels-js.cloudfoundry.com | mysql-js |
+    +-------------+----+---------+----------------------------+----------+
+
+</pre>
+
+<h2 id="scaling-the-application">Scaling The Application</h2>
+
+<p>Use the <code>vmc stats &lt;appname&gt;</code> command to display the current configuration and resource utilization of an application.  For example:</p>
+
+<pre class="terminal">
+    prompt$ vmc stats hotels
+
+    +----------+-------------+----------------+--------------+---------------+
+    | Instance | CPU (Cores) | Memory (limit) | Disk (limit) | Uptime        |
+    +----------+-------------+----------------+--------------+---------------+
+    | 0        | 0.0% (4)    | 61.7M (512M)   | 8.4M (2G)    | 0d:0h:39m:42s |
+    | 1        | 7.5% (4)    | 63.8M (512M)   | 8.4M (2G)    | 0d:0h:0m:22s  |
+    +----------+-------------+----------------+--------------+---------------+
+
+</pre>
+
+<p>The table displays a row of data for each instance of the application; in the table above, there are two instances of <code>hotels</code>.   Each row shows the CPU utilization of the instance, the memory usage and the maximum allowed, the disk usage and the maximum, and how long the instance has been running.</p>
+
+<p>To change the maximum allowed memory, use the <code>vmc mem</code> command, passing it the name of the application and the maximum memory in MB.  This changes the maximum for all instances of the application.  For example, to lower the maximum memory of the <code>hotels</code> application to 128 MB:</p>
+
+<pre class="terminal">
+prompt$ vmc mem hotels 128
+</pre>
+
+<p>Note that Cloud Foundry must restart the application for this change to take effect.</p>
+
+<p>Another way to scale the application up so that more user sessions can successfully and quickly connect at once, you can add more instances.  Conversely, if you want to conserve the resources associated with your Cloud Foundry account and scale <em>down</em> an application that currently has multiple instances running, you can delete instances.  For example, to specify that you want an application to have four instances running concurrently:</p>
+
+<pre class="terminal">
+prompt$ vmc instances hotels 4
+</pre>
+
+<p>Use <code>vmc stats</code> to ensure that indeed there are four instances of the application running:</p>
+
+<pre class="terminal">
+    prompt$ vmc stats hotels
+
+    +----------+-------------+----------------+--------------+--------------+
+    | Instance | CPU (Cores) | Memory (limit) | Disk (limit) | Uptime       |
+    +----------+-------------+----------------+--------------+--------------+
+    | 0        | 0.5% (4)    | 64.6M (128M)   | 8.4M (2G)    | 0d:0h:5m:4s  |
+    | 1        | 0.5% (4)    | 62.4M (128M)   | 8.4M (2G)    | 0d:0h:5m:4s  |
+    | 2        | 7.0% (4)    | 61.0M (128M)   | 8.4M (2G)    | 0d:0h:0m:22s |
+    | 3        | 6.7% (4)    | 59.6M (128M)   | 8.4M (2G)    | 0d:0h:0m:22s |
+    +----------+-------------+----------------+--------------+--------------+
+
+</pre>
+
+<p>Note that adding additional instances of a deployed application uses up more memory and disk space from your quota.</p>
+
+<h2 id="changing-the-deployment-url">Changing the Deployment URL</h2>
+
+<p>Use the <code>vmc map</code> and <code>vmc unmap</code> commands to change the deployment URL to which an application is associated.</p>
+
+<p>For example, to associate a new  deployment URL to an existing application:</p>
+
+<pre class="terminal">
+prompt$ vmc map hotels hotels-new.cloudfoundry.com
+</pre>
+
+<p>To unmap an existing URL, use the <code>vmc unmap</code> command:</p>
+
+<pre class="terminal">
+prompt$ vmc unmap hotels hotels-new.cloudfoundry.com
+</pre>
+
+<p>See <a href="#updating-a-deployment-without-any-downtime">Updating A Deployment Without Any Downtime</a> for additional examples of using these commands in a real-life scenario.</p>
+
+<h2 id="get-log-and-crash-information-about-an-application">Get Log and Crash Information about an Application</h2>
+
+<p>To see the most recent activity in the stderr.log and stdout.log files of the application, use the <code>vmc logs &lt;appname&gt;</code> command:</p>
+
+<pre class="terminal">
+prompt$ vmc logs hotels
+</pre>
+
+<p>If you suspect that your application has crashed recently, run <code>vmc crashes &lt;appname&gt;</code> which will provide you with more information:</p>
+
+<pre class="terminal">
+prompt$ vmc crashes hotels
+</pre>
+
+<p>Use <code>vmc crashlogs</code> to get more detailed information about the crash:</p>
+
+<pre class="terminal">
+prompt$ vmc crashlogs hotels
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>

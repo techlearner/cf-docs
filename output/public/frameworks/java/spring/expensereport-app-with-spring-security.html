@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/frameworks/java/spring/expensereport-app-with-spring-security.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | Spring MVC App with Spring Security' property='og:title'>
+<meta content='Spring security added to ExpenseReport App.' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | Spring MVC App with Spring Security</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Frameworks</h1>
+<p class='sub-head'>Spring MVC App with Spring Security</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Spring security added to ExpenseReport App.</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/Spring" rel="tag">Spring</a><a href="/tags/STS" rel="tag">STS</a><a href="/tags/tomcat" rel="tag">tomcat</a><a href="/tags/maven" rel="tag">maven</a><a href="/tags/Spring-Security" rel="tag">Spring-Security</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-10-03
+</span>
+</p>
+<div id='social-share'></div>
+<h2 id="introduction">Introduction</h2>
+<p>Spring Security provides authentication and access services for J2EE-based enterprise software applications.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin this tutorial, you should be familiar with:</p>
+
+<ol>
+<li>
+    <p>Working with STS or Eclipse IDE.</p>
+  </li>
+  <li>
+    <p>Assuming previous exercise get completed.</p>
+  </li>
+</ol><h2 id="add-spring-security-to-expensereport-app">Add Spring Security to ExpenseReport App</h2>
+<p>This section provides details on how to get integrate ExpenseReport App with Spring Security.
+These are the required jars that we have to add in pom.xml,</p>
+
+<ul>
+<li>spring-security-core.jar</li>
+  <li>spring-security-web.jar</li>
+  <li>spring-security-config.jar</li>
+</ul><h2 id="enable-spring-security">Enable Spring Security:</h2>
+<p>To enable Spring security we need to add the following steps:</p>
+
+<ol>
+<li>
+    <p>Add a DelegatingFilterProxy in <code>src/main/webapp/WEB-INF/web.xml</code></p>
+  </li>
+  <li>
+    <p>Create a custom XML configuration named spring-security.xml in <code>src/main/resources</code></p>
+  </li>
+</ol><p>In the web.xml declare an instance of a DelegatingFilterProxy. This will filter the requests based on the declared url-pattern.</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;filter&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;filter-class&gt;</span>org.springframework.web.filter.DelegatingFilterProxy<span class="nt">&lt;/filter-class&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;filter-mapping&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span></code></pre>
+
+<p>In the spring-security.xml,define HTTP security configuration by adding http tag.And define which url pattern to intecept. Add “jdbc-user service” tag and define the query to get the data from database.</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;beans:beans</span> <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/security"</span>
+    <span class="na">xmlns:beans=</span><span class="s">"http://www.springframework.org/schema/beans"</span> 
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/beans</span>
+<span class="s">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span>
+<span class="s">    http://www.springframework.org/schema/security</span>
+<span class="s">    http://www.springframework.org/schema/security/spring-security-3.0.3.xsd"</span><span class="nt">&gt;</span>
+
+
+    <span class="nt">&lt;http</span> <span class="na">auto-config=</span><span class="s">"true"</span> <span class="na">use-expressions=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/login"</span> <span class="na">filters=</span><span class="s">"none"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/logout"</span> <span class="na">filters=</span><span class="s">"none"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/signUp**"</span> <span class="na">filters=</span><span class="s">"none"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/resources/**"</span> <span class="na">filters=</span><span class="s">"none"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/loadApprovalExpenses"</span> <span class="na">access=</span><span class="s">"hasRole('ROLE_MANAGER')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/"</span> <span class="na">access=</span><span class="s">"hasAnyRole('ROLE_USER','ROLE_MANAGER')"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/**"</span> <span class="na">access=</span><span class="s">"isAuthenticated()"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;form-login</span> <span class="na">login-page=</span><span class="s">"/login"</span> <span class="na">default-target-url=</span><span class="s">"/"</span>
+            <span class="na">authentication-failure-url=</span><span class="s">"/loginfailed"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;logout</span> <span class="na">logout-success-url=</span><span class="s">"/logout"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;session-management</span> <span class="na">invalid-session-url=</span><span class="s">"/sessionTimeout"</span> <span class="nt">&gt;</span>
+            <span class="nt">&lt;concurrency-control</span> <span class="na">max-sessions=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/session-management&gt;</span>
+    <span class="nt">&lt;/http&gt;</span>
+    <span class="nt">&lt;beans:bean</span> <span class="na">id=</span><span class="s">"sas"</span> <span class="na">class=</span><span class="s">"org.springframework.security.web.authentication.session.SessionFixationProtectionStrategy"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;authentication-manager&gt;</span>
+        <span class="nt">&lt;authentication-provider&gt;</span>
+            <span class="nt">&lt;jdbc-user-service</span> <span class="na">data-source-ref=</span><span class="s">"dataSource"</span>
+ 
+           <span class="na">users-by-username-query=</span><span class="s">"</span>
+<span class="s">              select username,password,enabled  </span>
+<span class="s">              from users where username=?"</span> 
+ 
+           <span class="na">authorities-by-username-query=</span><span class="s">"</span>
+<span class="s">              select u.username, r.rolename from users u, role r </span>
+<span class="s">              where u.role_roleid = r.roleid and u.username =?  "</span> 
+ 
+        <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/authentication-provider&gt;</span>
+    <span class="nt">&lt;/authentication-manager&gt;</span>
+
+<span class="nt">&lt;/beans:beans&gt;</span></code></pre>
+
+<ol>
+<li>
+    <p>To access the application, the user must have either <code>ROLE_USER</code>,<code>ROLE_MANAGER</code> access so to validate this we have added <code>&lt;intercept-url pattern="/" access="hasAnyRole('ROLE_USER','ROLE_MANAGER')"/&gt;</code>.</p>
+  </li>
+  <li>
+    <p>Manager only can approve the expenses so we have restricted that access to only Manager by giving  <code>&lt;intercept-url pattern="/loadApprovalExpenses" access="hasRole('ROLE_MANAGER')"/&gt;</code>.</p>
+  </li>
+</ol><p>To load this file as part of configuration add <code>@ImportResource({ "classpath:spring-security.xml"})</code> in <code>ComponentConfig</code> class.</p>
+
+<p>Create <code>Logincontroller</code> in <code>com.springsource.html5expense.contoller</code> package and add mapping for login,logout,loginfailed,signup.The login.jsp has two input elements for username and password as j_username and j_password.These are spring’s placeholder for the username and password respectively.
+when the form is submitted ,it will be sent to the following action URL:j_spring_security_check.</p>
+
+<h2 id="check-point">Check point</h2>
+<p>Now build the app and test it locally.
+Select <code>Run As -&gt; Maven clean</code></p>
+
+<p><img src="/images/spring_tutorial/maven_clean.png" alt="maven_clean.png"></p>
+
+<p>Once Maven clean completed select<code> Run As -&gt; Maven install</code>.It will download dependencies from pom.xml.</p>
+
+<p><img src="/images/spring_tutorial/maven_install.png" alt="maven_install.png"></p>
+
+<p>Select <code>Run As -&gt; Maven build</code></p>
+
+<p><img src="/images/spring_tutorial/maven_build.png" alt="maven_build.png"></p>
+
+<p>And give Maven goal as , <code>tomcat:run</code></p>
+
+<p><img src="/images/spring_tutorial/maven_run.png" alt="maven_run.png"></p>
+
+<p>Once server starts completed. Open your browser and enter application url : <code>http://localhost:8080/html5expense/createNewExpense</code> ,this time browser will not open a form to create new expense. It will automatically redirect to login page.</p>
+
+<p><img src="/images/spring_tutorial/localhost_login.png" alt="STS Fabric Server.png"></p>
+
+<p><a href="/frameworks/java/spring/spring-expensereport-app-tutorial.html">&lt;==Prev</a>                                                         <a href="/frameworks/java/spring/spring-app-deployment-using-STS.html">Next==&gt;</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>

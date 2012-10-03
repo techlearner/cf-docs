@@ -1,0 +1,85 @@
+ 2279 ?        00:09:32 empathy
+ 2281 ?        00:00:18 bamfdaemon
+ 2284 ?        00:00:04 mission-control
+ 2289 ?        00:00:04 telepathy-logge
+ 2295 ?        00:00:34 telepathy-gabbl
+ 2297 ?        00:00:00 telepathy-salut
+ 2409 pts/4    00:00:00 sh
+ 2410 pts/4    00:00:00 pager
+ 3069 ?        00:02:09 gedit
+ 3920 ?        00:01:27 chrome
+ 4439 ?        00:20:52 STS
+ 6655 ?        00:00:03 chrome
+ 6738 ?        00:00:00 chrome
+ 6767 ?        00:00:13 chrome
+ 7215 pts/4    00:00:00 psql
+ 7218 ?        00:00:00 postgres
+ 7219 pts/4    00:00:00 sh
+ 7220 pts/4    00:00:00 pager
+ 7312 pts/4    00:00:00 psql
+ 7315 ?        00:00:00 postgres
+ 7551 ?        00:00:17 chrome
+ 9488 ?        00:00:30 gnome-terminal
+ 9493 ?        00:00:00 gnome-pty-helpe
+ 9628 ?        00:00:05 chrome
+ 9768 ?        00:00:00 dbus-launch
+ 9769 ?        00:00:00 dbus-daemon
+16095 pts/0    00:00:00 bash
+16150 pts/0    00:00:00 psql
+16152 ?        00:00:00 postgres
+16154 pts/0    00:00:00 sh
+16155 pts/0    00:00:00 pager
+16156 pts/0    00:00:00 psql
+16159 ?        00:00:00 postgres
+--
+21146 ?        00:00:00 postgres
+21298 ?        00:00:00 gvfsd-computer
+21311 ?        00:00:00 mount.ntfs
+21348 ?        00:00:00 gvfsd-network
+21351 ?        00:00:00 gvfsd-smb-brows
+21357 ?        00:00:00 gvfsd-dnssd
+22586 pts/1    00:00:00 bash
+22748 pts/2    00:00:00 bash
+22944 pts/3    00:00:01 bash
+23592 ?        00:00:04 chrome
+23888 tty6     00:00:00 bash
+23958 ?        00:00:00 kworker/u:1
+24341 ?        00:00:02 chrome
+24350 ?        00:00:07 chrome
+24365 ?        00:00:06 chrome
+24397 ?        00:00:00 chrome
+24428 ?        00:00:05 chrome
+24435 ?        00:00:05 chrome
+24470 ?        00:00:06 chrome
+26594 pts/0    00:00:00 sh
+26595 pts/0    00:00:00 pager
+29000 pts/3    00:00:13 ruby
+29233 ?        00:00:45 chrome
+29382 ?        00:00:01 chrome
+29390 ?        00:00:08 chrome
+29397 ?        00:00:00 chrome
+29485 ?        00:00:10 evince
+29491 ?        00:00:00 evinced
+29602 ?        00:00:00 sh <defunct>
+30252 ?        00:00:01 kworker/1:1
+30673 ?        00:00:00 kworker/0:2
+30787 ?        00:35:06 chrome
+30793 ?        00:00:13 chrome
+30794 ?        00:00:00 chrome-sandbox
+30795 ?        00:00:00 chrome
+30797 ?        00:00:00 nacl_helper_boo
+30798 ?        00:00:00 chrome
+30838 ?        00:00:00 kworker/1:0
+30896 ?        00:00:00 pickup
+30908 ?        00:00:05 chrome
+30972 ?        00:00:00 kworker/0:0
+31014 ?        00:10:59 chrome
+31060 pts/0    00:00:00 psql
+31074 ?        00:00:00 postgres
+31325 ?        00:00:36 chrome
+31852 ?        00:00:24 chrome
+32722 ?        00:00:00 kworker/1:2
+32726 ?        00:00:00 chrome
+32752 ?        00:00:00 kworker/0:1
+32763 pts/3    00:00:00 ps
+32764 pts/3    00:00:00 grep

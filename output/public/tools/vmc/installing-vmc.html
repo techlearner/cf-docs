@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/tools/vmc/installing-vmc.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | VMC Installation' property='og:title'>
+<meta content='Installing the Command-Line Interface (vmc)' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | VMC Installation</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Tools</h1>
+<p class='sub-head'>VMC Installation</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Installing the Command-Line Interface (vmc)</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/vmc" rel="tag">vmc</a><a href="/tags/install" rel="tag">install</a><a href="/tags/CLI" rel="tag">CLI</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-08-30
+</span>
+</p>
+<div id='social-share'></div>
+<p>You use the Cloud Foundry command-line interface (known as <code>vmc</code>) at a Unix terminal or Windows command prompt to execute all the Cloud Foundry operations, such as configuring your applications and deploying them to Cloud Foundry.</p>
+
+<p>You execute the <code>vmc</code> commands in the same way whether you are deploying your application to the PaaS Cloud Foundry (<code>cloudfoundry.com</code>), or to your own local version of Cloud Foundry (Micro Cloud Foundry).  The basic commands are the same; the only difference is that you initially specify a different target before you log in using your Cloud Foundry credentials.</p>
+
+<p>This section describes the prerequisites for installing <code>vmc</code>, installation instructions, and how to deploy a simple application.</p>
+
+<p><strong>Subtopics</strong></p>
+
+<ul>
+<li><a href="#prerequisite-installing-ruby-and-rubygems">Prerequisite: Installing Ruby and RubyGems</a></li>
+  <li><a href="#installing-vmc-procedure">Installing vmc: Procedure</a></li>
+  <li><a href="#verifying-the-installation-by-deploying-a-sample-application">Verifying the Installation by Deploying a Sample Application</a></li>
+  <li><a href="#next-steps">Next Steps</a></li>
+</ul><h2 id="prerequisite-installing-ruby-and-rubygems">Prerequisite: Installing Ruby and RubyGems</h2>
+
+<p><code>vmc</code> is delivered as a Ruby gem, which means you must install Ruby and RubyGems (a Ruby package manager) on the computer on which you want to run <code>vmc</code>, if you have not already done so.</p>
+
+<p>The following versions of Ruby are currently supported:</p>
+
+<ul>
+<li>1.8.7</li>
+  <li>1.9.2</li>
+</ul><p>If you have already installed Ruby and RubyGems, then you can skip to <a href="#installing-vmc-main-steps">Installing vmc: Main Steps</a>.</p>
+
+<p>The following sections provide basic information about installing Ruby and RubyGems on Windows and a variety of Linux computers:</p>
+
+<ul>
+<li><a href="/frameworks/ruby/installing-ruby.html#windows">Windows</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#mac-os-x">Mac OS X</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#ubuntu">Ubuntu</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#redhatfedora">Redhat/Fedora</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#centos">Centos</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#suse">SuSE</a></li>
+  <li><a href="/frameworks/ruby/installing-ruby.html#debian">Debian</a></li>
+</ul><h2 id="installing-vmc-procedure">Installing vmc: Procedure</h2>
+
+<p>Installing <code>vmc</code> is easy once you have installed <a href="#prerequisite-installing-ruby-and-rubygems">Ruby and RubyGems</a> on your computer.</p>
+
+<ul>
+<li>
+    <p>If you haven’t already done so, signup for your free <a href="http://cloudfoundry.com/">Cloud Foundry</a> account.  You will receive an email with your user credentials.</p>
+  </li>
+  <li>
+    <p>Open a terminal (Linux) and execute the following command:</p>
+  </li>
+</ul><pre class="terminal">
+prompt$ sudo gem install vmc
+</pre>
+
+<p>Consult your system administrator for any required authentication credentials for the <code>sudo</code> command.
+   On Windows, open a command prompt in which Ruby is enabled and execute the following:</p>
+
+<pre class="terminal">
+prompt&gt; gem install vmc
+</pre>
+
+<ul>
+<li>
+    <p>Execute the <code>vmc target</code> command to specify the Cloud Foundry target to which you will deploy your applications:</p>
+
+    <ul>
+<li>To deploy on the PaaS Cloud Foundry, specify <code>api.cloudfoundry.com</code>
+</li>
+      <li>To deploy on your local Micro Cloud Foundry, specify <code>api.&lt;appname&gt;.cloudfoundry.me</code>, where <em>appname</em> is the domain you registered for your application at the Micro Cloud Foundry Web site.  See <a href="/infrastructure/micro/installing-mcf.html">Installing Micro Cloud Foundry</a>.</li>
+    </ul>
+<p>The following command targets the PaaS Cloud Foundry:</p>
+  </li>
+</ul><pre class="terminal">
+prompt$ vmc target api.cloudfoundry.com
+</pre>
+
+<pre><code>To determine your current target, execute the `vmc target` command without any parameters:
+</code></pre>
+
+<pre class="terminal">
+prompt$ vmc target
+</pre>
+
+<ul>
+<li>Login using the user credentials you received via email after you registered with Cloud Foudnry.  Your username is typically your email address.</li>
+</ul><pre class="terminal">
+prompt$ vmc login
+</pre>
+
+<ul>
+<li>Ensure you have successfully logged in by retrieving information about your account:</li>
+</ul><pre class="terminal">
+prompt$ vmc info
+</pre>
+
+<ul>
+<li>Change your password:</li>
+</ul><pre class="terminal">
+prompt$ vmc passwd
+</pre>
+
+<ul>
+<li>View the full list of VMC commands, along with their parameters and a brief description, by executing the <code>vmc help</code> command:</li>
+</ul><pre class="terminal">
+prompt$ vmc help
+</pre>
+
+<p>You have now successfully installed <code>vmc</code> and run a few basic commands.</p>
+
+<h2 id="verifying-the-installation-by-deploying-a-sample-application">Verifying the Installation by Deploying a Sample Application</h2>
+
+<p>Now that you have installed VMC and logged in to your target, you can start deploying applications to the Cloud.</p>
+
+<p>This section shows how to deploy a simple application that does not require any services (such as MySQL or RabbitMQ).  The purpose of the section is for you to quickly get a feel for VMC and Cloud Foundry by deploying and running a very basic application.  Later sections describe how to configure your application to use services that connect to databases or manage messaging.</p>
+
+<ul>
+<li>
+    <p>Create a simple application that does not require any services and package it appropriately, such as into a <code>*.war</code> file for Spring applications.</p>
+
+    <p>If you do not currently have an application, see <a href="#creating-a-simple-sinatra-application">Creating a Simple Sinatra Application</a> for instructions on how to create a basic Ruby Hello World application using Sinatra in just a few minutes.</p>
+  </li>
+  <li>
+    <p>Open a terminal window (Linux) or command prompt (Windows) and change the directory that contains your application.</p>
+
+    <p>For example, if you created the simple Ruby <a href="#creating-a-simple-sinatra-application">Hello World</a> application using Sintatra:</p>
+  </li>
+</ul><pre class="terminal">
+prompt$ cd /usr/bob/sample-apps/hello
+</pre>
+
+<ul>
+<li>Deploy your application using the <code>vmc push</code> command, which interactively prompts for deployment information:</li>
+</ul><pre class="terminal">
+prompt$ vmc push
+</pre>
+
+<p>For prompts that require a yes or no answer, the default value is shown using capital letters.  For example, if “yes” is the default, you’ll see <code>[Yn]</code>.</p>
+
+<p>The following sample output also shows the responses you should provide; for clarity, default values are specified explicitly.  See further explanations about these prompts after the example:</p>
+
+<pre class="terminal">
+   Would you like to deploy from the current directory? [Yn] Yes
+   Application Name: hello
+   Application Deployed URL: 'hello.cloudfoundry.com'?  hello-bob.cloudfoundry.com
+   Detected a Sinatra Application, is this correct? [Yn]  Yes
+   Memory Reservation [Default:128M]  (64M, 128M, 256M, 512M or 1G) (Press Enter to take default)
+   Would you like to bind any services to 'hello'? [yN]: No
+
+</pre>
+
+<p>After you complete the prompts, <code>vmc</code> provides the following output for a successful push (deployment):</p>
+
+<pre class="terminal">
+     Uploading Application:
+       Checking for available resources: OK
+       Packing application: OK
+     Uploading (0K): OK
+     Push Status: OK
+     Staging Application: OK
+     Starting Application: OK
+
+</pre>
+
+<p>The Application Name refers to the internal name of the application as well as the actual file you want to deploy without its file extension, <code>hello</code> in our example.  The Application Deployed URL is the URL that you use in your browser to run the application after it has successfully deployed and started on Cloud Foundry.  Be sure that you specify a unique deployment URL, or <code>vmc</code> will return an error message that the URI has already been taken or reserved.  In the example above, the URL is <code>hello-bob.cloudfoundry.com</code>.</p>
+
+<p>Verify that your application is available by executing the <code>vmc apps</code> command:</p>
+
+<pre class="terminal">
+$ vmc apps
+
+    +--------------+----+--------+-------------------------------+----------+
+    | Application  | #  | Health | URLS                          | Services |
+    +--------------+----+--------+-------------------------------+----------+
+    | hello        | 1  | RUNNING| hello-bob.cloudfoundry.com    |          |
+    +--------------+----+--------+-------------------------------+----------+
+
+</pre>
+
+<p>Run your application in your browser by going to the URL you provided to the <code>vmc push</code> command, which in the example above is <code>hello-bob.cloudfoundry.com</code>.</p>
+
+<p>If, for example, you deployed the Hello World Sinatra application, you should see the text <code>Hello from Cloud Foundry</code> in your browser.</p>
+
+<p><img src="/images/screenshots/installing-vmc/hello-bob-app.png" alt="hello-bob-app.png"></p>
+
+<h2 id="updating-the-deployment">Updating the Deployment</h2>
+
+<p>Now that you have your first application deployed, it is easy to update if you make changes to it, as describe in the following procedure.</p>
+
+<p>Change your application in some way so that, when you run it, you will know which version it is.</p>
+
+<p>For example, in the simple Hello World Sinatra application contained in <code>hello.rb</code>, change the text <code>Hello from Cloud Foundry</code> to <code>Hello from Cloud Foundry and VMware</code>.</p>
+
+<p>At your command prompt or terminal, be sure you are still located in the directory that contains your application file (<code>/usr/bob/sample-apps/hello.rb</code> in our example) and execute the <code>vmc update</code> command, specifying the name of your application, which in our example is <code>hello</code>:</p>
+
+<pre class="terminal">
+$ vmc update hello
+
+    Uploading Application:
+          Checking for available resources: OK
+          Packing application: OK
+          Uploading (0K): OK
+    Push Status: OK
+    Stopping Application: OK
+    Staging Application: OK
+    Starting Application: OK
+
+</pre>
+
+<p>In your browser, refresh your application and you will see your changes:</p>
+
+<p><img src="/images/screenshots/installing-vmc/hello-bob-app-updated.png" alt="hello-bob-app-updated.png"></p>
+
+<h2 id="creating-a-simple-sinatra-application">Creating a Simple Sinatra Application</h2>
+
+<p>If you have not already done so, download and install the <a href="http://www.sinatrarb.com/">Sinatra Web framework</a> on your computer.</p>
+
+<p>Create the directory in which the new application will live.  For example:</p>
+
+<pre class="terminal">
+prompt$ mkdir /usr/bob/sample-apps/hello
+</pre>
+
+<p>Using your favorite text editor, create a file called <code>hello.rb</code> in this new directory with the following contents:</p>
+
+<pre><code class="language-ruby"><span class="nb">require</span> <span class="s1">'sinatra'</span>
+<span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+  <span class="s2">"Hello from Cloud Foundry"</span>
+<span class="k">end</span></code></pre>
+
+<p><img src="/images/screenshots/installing-vmc/vmc_hello.jpg" alt="hello.rb" title="hello app"></p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ul>
+<li><a href="/infrastructure/micro/installing-mcf.html">Installing Micro Cloud Foundry</a></li>
+  <li><a href="/tools/deploying-apps.html">Deploying and Managing Applications</a></li>
+  <li><a href="/frameworks.html">Configuring Applications to Use Cloud Foundry</a></li>
+  <li><a href="/tools/vmc/vmc-quick-ref.html">VMC Quick Reference Guide</a></li>
+  <li><a href="/tools/vmc/debugging.html">Debugging</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>

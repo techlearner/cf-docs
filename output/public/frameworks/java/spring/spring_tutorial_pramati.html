@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/frameworks/java/spring/spring_tutorial_pramati.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | Spring' property='og:title'>
+<meta content='Spring Application Development with Cloud Foundry' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | Spring</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Frameworks</h1>
+<p class='sub-head'>Spring</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Spring Application Development with Cloud Foundry</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/spring" rel="tag">spring</a><a href="/tags/mongodb" rel="tag">mongodb</a><a href="/tags/redis" rel="tag">redis</a><a href="/tags/code-attached" rel="tag">code-attached</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-09-24
+</span>
+</p>
+<div id='social-share'></div>
+<p>This is a guide for Java developers using the Spring framework and PostgreSQL database to build and deploy their apps on Cloud Foundry. It shows you how to set up and successfully deploy Spring Java PostgreSQL applications to Cloud Foundry.</p>
+
+<p>Before you get started, you need the following:</p>
+
+<ul>
+<li>
+    <p>A <a href="http://cloudfoundry.com/signup">Cloud Foundry account</a></p>
+  </li>
+  <li>
+    <p>The <a href="/tools/vmc/installing-vmc.html">vmc</a> Cloud Foundry command line tool</p>
+  </li>
+  <li>
+    <p>A <a href="http://www.springsource.org/spring-tool-suite-download">Spring Tool Suite™ (STS)</a> installation</p>
+  </li>
+  <li>
+    <p>A Cloud Foundry plugin for STS.</p>
+  </li>
+</ul><h2 id="introduction">Introduction</h2>
+
+<p>In this tutorial, we take the following user case.</p>
+
+<p>Create and Deploy an Expense Reporting App on Cloud Foundry.</p>
+
+<h2 id="subtopics">Subtopics</h2>
+
+<ul>
+<li><a href="#create-spring-mvc-template-project">Create Spring MVC Template Project</a></li>
+  <li><a href="#expensereport-app">ExpenseReport App</a></li>
+  <li><a href="#add-spring-security-to-expensereport-app">Add Spring Security to ExpenseReport App</a></li>
+  <li><a href="#build-and-run-the-app-locally">Build and Run the App Locally</a></li>
+  <li><a href="#deploy-the-app-on-cloud-foundry-using-vmc">Deploy the App on Cloud Foundry Using VMC</a></li>
+  <li><a href="#deploy-the-app-on-cloud-foundry-using-sts">Deploy the App on Cloud Foundry Using STS</a></li>
+</ul><h2 id="create-spring-mvc-template-project">Create Spring MVC Template Project</h2>
+
+<p>This section provides details on how to get started with STS (SpringSource Tool Suite) and Spring MVC.Please open your STS and select dashboard by clicking,
+    Help -&gt; Dashboard.</p>
+
+<p>From the dashboard view select Spring Template Project.This will open like this.
+<img src="/images/spring_tutorial/spring_template_project_mvc.png" alt="Spring MVC Template Project"></p>
+
+<p>then choose <code>Spring MVC Project</code>.
+The first time you do it, STS might ask you to download some extra elements from the Internet. 
+<img src="/images/spring_tutorial/spring_template_project_mvc_download.png" alt="spring_template_project_mvc_download.png"></p>
+
+<p>You’ll need to give your project a name and a top-level package:</p>
+
+<p>Click on finish – and STS will create the project.</p>
+
+<p>Before run the project.Select <code>Run As -&gt; Maven clean</code>
+<img src="/images/spring_tutorial/maven_clean.png" alt="maven_clean.png"></p>
+
+<p>Once Maven clean completed select<code> Run As -&gt; Maven install</code>.It will download dependencies from pom.xml.
+<img src="/images/spring_tutorial/maven_install.png" alt="maven_install.png"></p>
+
+<p>Select <code>Run As -&gt; Maven build</code>
+<img src="/images/spring_tutorial/maven_build.png" alt="maven_build.png"></p>
+
+<p>And give Maven goal as , <code>tomcat:run</code>
+<img src="/images/spring_tutorial/maven_run.png" alt="maven_run.png"></p>
+
+<p>Once server starts completed,STS will open the home page for the project which displays Hello world message with the current server time.
+<img src="/images/spring_tutorial/hello_world.png" alt="Hello World Output"></p>
+
+<h2 id="expensereport-app">ExpenseReport App</h2>
+
+<p>ExpenseReport is used to create and manage expenses.</p>
+
+<p>In our expensereport application,we are using two roles.</p>
+
+<ol>
+<li>
+    <p>Normal User - can create expense,view status of expense,edit expense,delete expense.</p>
+  </li>
+  <li>
+    <p>Admin User -  approve expense,reject expense which are created by normal user.</p>
+
+    <p>Once Normal User submits his expense it will go to admin work items.Admin can approve or reject the expense.</p>
+  </li>
+</ol><p><img src="/images/spring_tutorial/usecase_diagram.png" alt="spring-expensereport-usecase.png"></p>
+
+<p><img src="/images/spring_tutorial/usecase_diagram_admin.png" alt="spring-expensereport-usecase_admin.png"></p>
+
+<p>These expenses are created by the users and the data
+is stored in underlying PostgreSQl database.</p>
+
+<p>The class diagram for our application is :</p>
+
+<p><img src="/images/spring_tutorial/class_diagram.png" alt="spring-expensereport-class_diagram.png"></p>
+
+<p>Before start,add the following dependencies in your pom.xml,</p>
+
+<ul>
+<li>postgresql-9.1-901.jdbc4.jar</li>
+  <li>hibernate-envers-3.5.0-Final.jar</li>
+  <li>commons-fileupload-1.2.1.jar</li>
+  <li>commons-io-1.3.jar</li>
+</ul><h2 id="add-entities">Add Entities</h2>
+
+<p>For our application we need to add Expense,User,UserRole,Attachment classes.Create the classes as a POJO with getters and setters for its properties
+and annotate your business class with @Entity. By default JPA will take class name as table name.if you want to store in different table name then provide @Table annotation with name property. Create a package for entities as com.springsource.html5expense.model and add all entities.</p>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.OneToOne</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.annotations.Cascade</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.hibernate.annotations.CascadeType</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"EXPENSE"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Expense</span> <span class="kd">implements</span> <span class="n">Serializable</span><span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">description</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">Double</span> <span class="n">amount</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">State</span> <span class="n">state</span> <span class="o">=</span> <span class="n">State</span><span class="o">.</span><span class="na">NEW</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">Date</span> <span class="n">expenseDate</span><span class="o">;</span>
+
+	<span class="nd">@OneToOne</span>
+	<span class="kd">private</span> <span class="n">User</span> <span class="n">user</span><span class="o">;</span>
+
+	<span class="nd">@OneToOne</span>
+	<span class="kd">private</span> <span class="n">ExpenseType</span> <span class="n">expenseType</span><span class="o">;</span>
+
+	<span class="nd">@OneToOne</span>
+	<span class="nd">@Cascade</span><span class="o">(</span><span class="n">CascadeType</span><span class="o">.</span><span class="na">DELETE_ORPHAN</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="n">Attachment</span> <span class="n">attachment</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="nf">Expense</span><span class="o">(){</span>
+
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">Expense</span><span class="o">(</span><span class="n">String</span> <span class="n">description</span><span class="o">,</span><span class="n">ExpenseType</span> <span class="n">expenseType</span><span class="o">,</span><span class="n">Date</span> <span class="n">expenseDate</span><span class="o">,</span>
+			<span class="n">Double</span> <span class="n">amount</span><span class="o">,</span><span class="n">User</span> <span class="n">user</span><span class="o">,</span><span class="n">Attachment</span> <span class="n">attachment</span><span class="o">){</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">description</span> <span class="o">=</span> <span class="n">description</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseType</span> <span class="o">=</span> <span class="n">expenseType</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseDate</span> <span class="o">=</span> <span class="n">expenseDate</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">amount</span> <span class="o">=</span> <span class="n">amount</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">user</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">attachment</span> <span class="o">=</span> <span class="n">attachment</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getDescription</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">description</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setDescription</span><span class="o">(</span><span class="n">String</span> <span class="n">description</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">description</span> <span class="o">=</span> <span class="n">description</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="kd">public</span> <span class="n">State</span> <span class="nf">getState</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">state</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setState</span><span class="o">(</span><span class="n">State</span> <span class="n">state</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">state</span> <span class="o">=</span> <span class="n">state</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">ExpenseType</span> <span class="nf">getExpenseType</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expenseType</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpenseType</span><span class="o">(</span><span class="n">ExpenseType</span> <span class="n">expenseType</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseType</span> <span class="o">=</span> <span class="n">expenseType</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Double</span> <span class="nf">getAmount</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">amount</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAmount</span><span class="o">(</span><span class="n">Double</span> <span class="n">amount</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">amount</span> <span class="o">=</span> <span class="n">amount</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Date</span> <span class="nf">getExpenseDate</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expenseDate</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpenseDate</span><span class="o">(</span><span class="n">Date</span> <span class="n">expenseDate</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseDate</span> <span class="o">=</span> <span class="n">expenseDate</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">User</span> <span class="nf">getUser</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUser</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">user</span> <span class="o">=</span> <span class="n">user</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Attachment</span> <span class="nf">getAttachment</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">attachment</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAttachment</span><span class="o">(</span><span class="n">Attachment</span> <span class="n">attachment</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">attachment</span> <span class="o">=</span> <span class="n">attachment</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Blob</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Lob</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.hibernate.annotations.Type</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Attachment</span> <span class="kd">implements</span> <span class="n">Serializable</span><span class="o">{</span>
+	
+
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+	
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">fileName</span><span class="o">;</span>
+	
+	<span class="nd">@Type</span><span class="o">(</span><span class="n">type</span><span class="o">=</span><span class="s">"org.hibernate.type.BinaryType"</span><span class="o">)</span> 
+	<span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">;</span>
+	
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">contentType</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getFileName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">fileName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFileName</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getContentType</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">contentType</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContentType</span><span class="o">(</span><span class="n">String</span> <span class="n">contentType</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">contentType</span> <span class="o">=</span> <span class="n">contentType</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getFileNmae</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">fileName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setFileNmae</span><span class="o">(</span><span class="n">String</span> <span class="n">fileNmae</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileNmae</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">getContent</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">content</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setContent</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">Attachment</span><span class="o">(){</span>
+		
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="nf">Attachment</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">,</span><span class="n">String</span> <span class="n">contentType</span><span class="o">,</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">content</span><span class="o">){</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">content</span> <span class="o">=</span> <span class="n">content</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">contentType</span> <span class="o">=</span> <span class="n">contentType</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">fileName</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.OneToOne</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExpenseReport</span> <span class="o">{</span>
+	
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">expenseReportId</span><span class="o">;</span>
+	
+	
+	<span class="nd">@OneToOne</span>
+	<span class="kd">private</span> <span class="n">Expense</span> <span class="n">expense</span><span class="o">;</span>
+	
+	<span class="kd">public</span>  <span class="nf">ExpenseReport</span><span class="o">(){</span>
+		
+	<span class="o">}</span>
+	
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getExpenseReportId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expenseReportId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpenseReportId</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseReportId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseReportId</span> <span class="o">=</span> <span class="n">expenseReportId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="kd">public</span> <span class="n">Expense</span> <span class="nf">getExpense</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expense</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpense</span><span class="o">(</span><span class="n">Expense</span> <span class="n">expense</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expense</span> <span class="o">=</span> <span class="n">expense</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span>  <span class="nf">ExpenseReport</span><span class="o">(</span><span class="n">Expense</span> <span class="n">expense</span><span class="o">){</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expense</span> <span class="o">=</span> <span class="n">expense</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExpenseType</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+	
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+	<span class="o">}</span>
+	
+	
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Role</span> <span class="kd">implements</span> <span class="n">Serializable</span> <span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">roleId</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getRoleId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">roleId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRoleId</span><span class="o">(</span><span class="n">Long</span> <span class="n">roleId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">roleId</span> <span class="o">=</span> <span class="n">roleId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getRoleName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">roleName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRoleName</span><span class="o">(</span><span class="n">String</span> <span class="n">roleName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">roleName</span> <span class="o">=</span> <span class="n">roleName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">roleName</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">enum</span> <span class="n">State</span> <span class="o">{</span>
+
+	<span class="n">NEW</span><span class="o">,</span>
+	
+	<span class="n">OPEN</span><span class="o">,</span>
+	
+	<span class="n">IN_REVIEW</span><span class="o">,</span>
+	
+	<span class="n">REJECTED</span><span class="o">,</span>
+	
+	<span class="n">APPROVED</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.Serializable</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.persistence.Entity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.GeneratedValue</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Id</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.OneToOne</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.persistence.Table</span><span class="o">;</span>
+
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"USERS"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="kd">implements</span> <span class="n">Serializable</span><span class="o">{</span>
+
+	<span class="nd">@Id</span>
+	<span class="nd">@GeneratedValue</span>
+	<span class="kd">private</span> <span class="n">Long</span> <span class="n">userId</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">userName</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">password</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="n">String</span> <span class="n">emailId</span><span class="o">;</span>
+
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="n">enabled</span><span class="o">;</span>
+
+	<span class="nd">@OneToOne</span>
+	<span class="kd">private</span> <span class="n">Role</span> <span class="n">role</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="n">Role</span> <span class="nf">getRole</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">role</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRole</span><span class="o">(</span><span class="n">Role</span> <span class="n">role</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">role</span> <span class="o">=</span> <span class="n">role</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEnabled</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">enabled</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEnabled</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">enabled</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">enabled</span> <span class="o">=</span> <span class="n">enabled</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">getUserId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">userId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserId</span><span class="o">(</span><span class="n">Long</span> <span class="n">userId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">userId</span> <span class="o">=</span> <span class="n">userId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getUserName</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">userName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserName</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getPassword</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">password</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPassword</span><span class="o">(</span><span class="n">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getEmailId</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">emailId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEmailId</span><span class="o">(</span><span class="n">String</span> <span class="n">emailId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">emailId</span> <span class="o">=</span> <span class="n">emailId</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="nf">User</span><span class="o">(){</span>
+
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">,</span><span class="n">String</span> <span class="n">password</span><span class="o">,</span><span class="n">String</span> <span class="n">mailId</span><span class="o">){</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">userName</span> <span class="o">=</span> <span class="n">userName</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">emailId</span> <span class="o">=</span> <span class="n">mailId</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre>
+
+<h2 id="create-controller-classes">Create controller classes</h2>
+
+<p>Controller is reponsible for mapping the request.create methods to map the URL request. Create a package for controllers as com.springsource.html5expense.controller and add the following controller classes.</p>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">controller</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.security.Principal</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Blob</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.hibernate.Hibernate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.ui.ModelMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMethod</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.MultipartFile</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Attachment</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Expense</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.ExpenseType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.User</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.AttachmentService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.ExpenseService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.ExpenseTypeService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.RoleService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.UserService</span><span class="o">;</span>
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExpenseController</span> <span class="o">{</span>
+
+
+	<span class="nd">@Autowired</span>
+	<span class="n">ExpenseService</span> <span class="n">expenseService</span><span class="o">;</span>
+
+	<span class="nd">@Autowired</span>
+	<span class="n">AttachmentService</span> <span class="n">attachmentService</span><span class="o">;</span>
+
+	<span class="nd">@Autowired</span>
+	<span class="n">ExpenseTypeService</span> <span class="n">expenseTypeService</span><span class="o">;</span>
+
+	<span class="nd">@Autowired</span> 
+	<span class="n">UserService</span> <span class="n">userService</span><span class="o">;</span>
+
+	<span class="nd">@Autowired</span>
+	<span class="n">RoleService</span> <span class="n">roleService</span><span class="o">;</span>
+
+	<span class="kd">public</span> <span class="n">ExpenseService</span> <span class="nf">getExpenseService</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expenseService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpenseService</span><span class="o">(</span><span class="n">ExpenseService</span> <span class="n">expenseService</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseService</span> <span class="o">=</span> <span class="n">expenseService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">AttachmentService</span> <span class="nf">getAttachmentService</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">attachmentService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAttachmentService</span><span class="o">(</span><span class="n">AttachmentService</span> <span class="n">attachmentService</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">attachmentService</span> <span class="o">=</span> <span class="n">attachmentService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">ExpenseTypeService</span> <span class="nf">getExpenseTypeService</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">expenseTypeService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpenseTypeService</span><span class="o">(</span><span class="n">ExpenseTypeService</span> <span class="n">expenseTypeService</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">expenseTypeService</span> <span class="o">=</span> <span class="n">expenseTypeService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">UserService</span> <span class="nf">getUserService</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">userService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserService</span><span class="o">(</span><span class="n">UserService</span> <span class="n">userService</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">userService</span> <span class="o">=</span> <span class="n">userService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">RoleService</span> <span class="nf">getRoleService</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">roleService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRoleService</span><span class="o">(</span><span class="n">RoleService</span> <span class="n">roleService</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">roleService</span> <span class="o">=</span> <span class="n">roleService</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/loadApprovalExpenses"</span> <span class="o">,</span><span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">loadApprovedExpenses</span><span class="o">(</span><span class="n">ModelMap</span> <span class="n">model</span><span class="o">){</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">approvedExpenseList</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getPendingExpensesList</span><span class="o">();</span>
+		<span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"approvedExpenseList"</span><span class="o">,</span> <span class="n">approvedExpenseList</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"expenseapproval"</span><span class="o">;</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/deleteExpense"</span><span class="o">,</span><span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">deleteExpense</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">){</span>
+		<span class="n">String</span> <span class="n">expenseId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseId"</span><span class="o">);</span>
+		<span class="n">Expense</span> <span class="n">expense</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getExpense</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">));</span>
+		<span class="n">getExpenseService</span><span class="o">().</span><span class="na">deleteExpense</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">));</span>
+		<span class="k">return</span> <span class="s">"redirect:/"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/editExpense"</span><span class="o">,</span><span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">editExpense</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">){</span>
+		<span class="n">String</span> <span class="n">expenseId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseId"</span><span class="o">);</span>
+		<span class="n">Expense</span> <span class="n">expense</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getExpense</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">));</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"expense"</span><span class="o">,</span><span class="n">expense</span><span class="o">);</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">ExpenseType</span><span class="o">&gt;</span> <span class="n">expenseTypeList</span> <span class="o">=</span> <span class="n">expenseTypeService</span><span class="o">.</span><span class="na">getAllExpenseType</span><span class="o">();</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"expenseTypeList"</span><span class="o">,</span> <span class="n">expenseTypeList</span><span class="o">);</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"isEdit"</span><span class="o">,</span> <span class="s">"true"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"newexpense"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/changeState"</span><span class="o">,</span><span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">changeState</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">){</span>
+		<span class="n">String</span> <span class="n">expenseId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseId"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"action"</span><span class="o">);</span>
+		<span class="n">getExpenseService</span><span class="o">().</span><span class="na">changeExpenseStatus</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">),</span> <span class="n">action</span><span class="o">);</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">approvedExpenseList</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getPendingExpensesList</span><span class="o">();</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"approvedExpenseList"</span><span class="o">,</span> <span class="n">approvedExpenseList</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"expenseapproval"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/updateExpense"</span><span class="o">,</span><span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">updateExpense</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">){</span>
+		<span class="n">String</span> <span class="n">expenseId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseId"</span><span class="o">);</span>
+		<span class="n">Expense</span> <span class="n">expense</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getExpense</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">));</span>
+		<span class="n">String</span> <span class="n">description</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"description"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"amount"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">expenseTypeVal</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseTypeId"</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"expense Id "</span><span class="o">+</span><span class="n">expenseTypeVal</span><span class="o">);</span>
+		<span class="n">ExpenseType</span> <span class="n">expenseType</span> <span class="o">=</span> <span class="n">getExpenseTypeService</span><span class="o">().</span><span class="na">getExpenseTypeById</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseTypeVal</span><span class="o">));</span>
+		<span class="n">expense</span><span class="o">.</span><span class="na">setExpenseType</span><span class="o">(</span><span class="n">expenseType</span><span class="o">);</span>
+		<span class="n">getExpenseService</span><span class="o">().</span><span class="na">updateExpense</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseId</span><span class="o">),</span> <span class="n">description</span><span class="o">,</span> <span class="k">new</span> <span class="n">Double</span><span class="o">(</span><span class="n">amount</span><span class="o">),</span><span class="n">expenseType</span><span class="o">);</span>
+		<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="o">(</span><span class="n">User</span><span class="o">)</span><span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">().</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"user"</span><span class="o">);</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">pendingExpenseList</span> <span class="o">=</span> <span class="n">getExpenseService</span><span class="o">().</span><span class="na">getExpensesByUser</span><span class="o">(</span><span class="n">user</span><span class="o">);</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"pendingExpenseList"</span><span class="o">,</span><span class="n">pendingExpenseList</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"myexpense"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/createNewExpenseReport"</span><span class="o">,</span><span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">createNewExpenseReport</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"file"</span><span class="o">)</span> <span class="n">MultipartFile</span> <span class="n">file</span><span class="o">,</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">){</span>
+		<span class="n">String</span> <span class="n">description</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"description"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">expenseTypeVal</span> <span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"expenseTypeId"</span><span class="o">);</span>
+		<span class="n">ExpenseType</span> <span class="n">expenseType</span> <span class="o">=</span> <span class="n">expenseTypeService</span><span class="o">.</span><span class="na">getExpenseTypeById</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">expenseTypeVal</span><span class="o">));</span>
+		<span class="n">String</span> <span class="n">amount</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"amount"</span><span class="o">);</span>
+		<span class="n">Date</span> <span class="n">expenseDate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">();</span>
+		<span class="n">Double</span> <span class="n">amountVal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Double</span><span class="o">(</span><span class="n">amount</span><span class="o">);</span>
+		<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="o">(</span><span class="n">User</span><span class="o">)</span><span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">().</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"user"</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">fileName</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+		<span class="n">String</span> <span class="n">contentType</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">file</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+			<span class="k">try</span><span class="o">{</span>
+                            <span class="n">fileName</span> <span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span>
+                            <span class="n">contentType</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getContentType</span><span class="o">();</span>
+                            <span class="n">Attachment</span> <span class="n">attachment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Attachment</span><span class="o">(</span><span class="n">fileName</span><span class="o">,</span> <span class="n">contentType</span><span class="o">,</span>  <span class="n">file</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+                            <span class="n">attachmentService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">attachment</span><span class="o">);</span>
+                            <span class="n">Long</span> <span class="n">id</span> <span class="o">=</span> <span class="n">expenseService</span><span class="o">.</span><span class="na">createExpense</span><span class="o">(</span><span class="n">description</span><span class="o">,</span><span class="n">expenseType</span><span class="o">,</span><span class="n">expenseDate</span><span class="o">,</span>
+    				<span class="n">amountVal</span><span class="o">,</span><span class="n">user</span><span class="o">,</span><span class="n">attachment</span><span class="o">);</span>
+			<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="s">"redirect:/"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/createNewExpense"</span><span class="o">)</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">createNewExpense</span><span class="o">(</span><span class="n">ModelMap</span> <span class="n">model</span><span class="o">){</span>
+
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">ExpenseType</span><span class="o">&gt;</span> <span class="n">expenseTypeList</span> <span class="o">=</span> <span class="n">expenseTypeService</span><span class="o">.</span><span class="na">getAllExpenseType</span><span class="o">();</span>
+		<span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"expenseTypeList"</span><span class="o">,</span> <span class="n">expenseTypeList</span><span class="o">);</span>
+		<span class="k">return</span> <span class="s">"newexpense"</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">controller</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Blob</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.hibernate.Hibernate</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Controller</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.util.FileCopyUtils</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMapping</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestMethod</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.bind.annotation.RequestParam</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.MultipartFile</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Attachment</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.AttachmentService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.ExpenseService</span><span class="o">;</span>
+
+
+
+<span class="nd">@Controller</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileAttachmentController</span> <span class="o">{</span>
+
+	    <span class="nd">@Autowired</span>
+	    <span class="kd">private</span> <span class="n">ExpenseService</span> <span class="n">expenseService</span><span class="o">;</span>
+
+	    <span class="nd">@Autowired</span>
+	    <span class="kd">private</span> <span class="n">AttachmentService</span> <span class="n">attachmentService</span><span class="o">;</span>
+
+	    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/save"</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+	    <span class="kd">public</span> <span class="n">String</span> <span class="nf">save</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"file"</span><span class="o">)</span> <span class="n">MultipartFile</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+	        <span class="k">try</span> <span class="o">{</span>
+
+	            <span class="n">String</span> <span class="n">fileName</span> <span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="na">getOriginalFilename</span><span class="o">();</span>
+	            <span class="n">String</span> <span class="n">contentType</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="na">getContentType</span><span class="o">();</span>
+	            <span class="n">Attachment</span> <span class="n">attachment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Attachment</span><span class="o">(</span><span class="n">fileName</span><span class="o">,</span> <span class="n">contentType</span><span class="o">,</span> <span class="n">file</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+	            <span class="n">attachmentService</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">attachment</span><span class="o">);</span>
+	        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+	            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	        <span class="o">}</span>
+	        <span class="k">return</span> <span class="s">"redirect:/index.html"</span><span class="o">;</span>
+	    <span class="o">}</span>
+
+	    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">"/download"</span><span class="o">)</span>
+	    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">download</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span><span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span><span class="o">{</span>
+	    	<span class="n">String</span> <span class="n">attachmentId</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"attachmentId"</span><span class="o">);</span>
+	    	         <span class="n">Attachment</span>  <span class="n">attachment</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">attachmentService</span><span class="o">.</span><span class="na">getAttachment</span><span class="o">(</span><span class="k">new</span> <span class="n">Long</span><span class="o">(</span><span class="n">attachmentId</span><span class="o">));</span>
+	    	         <span class="n">response</span><span class="o">.</span><span class="na">setContentType</span><span class="o">(</span><span class="n">attachment</span><span class="o">.</span><span class="na">getContentType</span><span class="o">());</span>
+	    	         <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"Content-Disposition"</span><span class="o">,</span><span class="s">"attachment; filename=\""</span> <span class="o">+</span> <span class="n">attachment</span><span class="o">.</span><span class="na">getFileName</span><span class="o">()</span> <span class="o">+</span><span class="s">"\""</span><span class="o">);</span>
+	    	         <span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">"cache-control"</span><span class="o">,</span> <span class="s">"must-revalidate"</span><span class="o">);</span>
+	    	         <span class="n">OutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">();</span>
+	    	         <span class="n">out</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">attachment</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+	    	         <span class="n">out</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+
+	    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"></code></pre>
+
+<h2 id="add-service-interfaces">Add Service Interfaces</h2>
+
+<p>Add ExpenseService interface which is responsible to fetch pending expenses,approved expenses,create expense,fetch expenses based on user,update an expense.Create JpaExpenseServiceImpl Class that implements this ExpenseService interface and do your implementation to get the data from database and annotate this class as @Service and @Transactional. @Service is a special component that marks service layer.Since we are using JPA for persistence, autowire your EntityManager.</p>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Attachment</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AttachmentService</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">Attachment</span> <span class="n">attachment</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">Attachment</span> <span class="nf">getAttachment</span><span class="o">(</span><span class="n">Long</span> <span class="n">attachmentId</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Attachment</span><span class="o">&gt;</span> <span class="n">getAttachmentByExpenseId</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseId</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteAttachment</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Expense</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.ExpenseReport</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ExpenseReportService</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">createExpenseReport</span><span class="o">(</span><span class="n">Expense</span> <span class="n">expense</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">ExpenseReport</span> <span class="nf">getExpenseReportById</span><span class="o">(</span><span class="n">Long</span> <span class="n">expensReportId</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">List</span> <span class="nf">getAllExpenseReports</span><span class="o">();</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Attachment</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Expense</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.ExpenseType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.User</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ExpenseService</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="n">Long</span> <span class="nf">createExpense</span><span class="o">(</span><span class="n">String</span> <span class="n">description</span><span class="o">,</span><span class="n">ExpenseType</span> <span class="n">expenseType</span><span class="o">,</span><span class="n">Date</span> <span class="n">expenseDate</span><span class="o">,</span>
+			<span class="n">Double</span> <span class="n">amount</span><span class="o">,</span><span class="n">User</span> <span class="n">user</span><span class="o">,</span><span class="n">Attachment</span> <span class="n">attachment</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">Expense</span> <span class="nf">getExpense</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseId</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">List</span> <span class="nf">getAllExpenses</span><span class="o">();</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">getExpensesByUser</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">getPendingExpensesList</span><span class="o">();</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Expense</span><span class="o">&gt;</span> <span class="n">getApprovedAndRejectedExpensesList</span><span class="o">();</span>
+
+	<span class="kd">public</span> <span class="n">Expense</span> <span class="nf">changeExpenseStatus</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseId</span><span class="o">,</span><span class="n">String</span> <span class="n">state</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteExpense</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseId</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">updateExpense</span><span class="o">(</span><span class="n">Long</span> <span class="n">expenseId</span><span class="o">,</span><span class="n">String</span> <span class="n">description</span><span class="o">,</span><span class="n">Double</span> <span class="n">amount</span><span class="o">,</span><span class="n">ExpenseType</span> <span class="n">expenseType</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.ExpenseType</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ExpenseTypeService</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ExpenseType</span><span class="o">&gt;</span> <span class="n">getAllExpenseType</span><span class="o">();</span>
+
+	<span class="kd">public</span> <span class="n">ExpenseType</span> <span class="nf">getExpenseTypeById</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Role</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">RoleService</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="n">Role</span> <span class="nf">getRole</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">Role</span> <span class="nf">getRoleByName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">service</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Role</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.User</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">UserService</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="n">User</span> <span class="nf">getUserById</span><span class="o">(</span><span class="n">Long</span> <span class="n">id</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">User</span> <span class="nf">getUserByUserName</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">);</span>
+
+	<span class="kd">public</span> <span class="n">User</span> <span class="nf">createUser</span><span class="o">(</span><span class="n">String</span> <span class="n">userName</span><span class="o">,</span><span class="n">String</span> <span class="n">password</span><span class="o">,</span><span class="n">String</span> <span class="n">mailId</span><span class="o">,</span><span class="n">Role</span> <span class="n">role</span><span class="o">);</span>
+
+<span class="o">}</span></code></pre>
+
+<h2 id="configuring-spring-application">Configuring Spring application:</h2>
+
+<p>To make our application ready we have to configure our application. Create a class with @Configuration annotation to configure your beans.It is a alternative approach to bean definition instead of xml configuration.We can pass this class a argument to spring container as a source for bean creation. To declare a bean, simply annotate a method with the @Bean annotation in your config class. You use this method to register a bean definition within an ApplicationContext of the type specified as the method’s return value. By default, the bean name will be the same as the method name.</p>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.sql.DataSource</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.commons.collections.map.HashedMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ComponentScan</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ImportResource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.PropertySource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.jdbc.datasource.SimpleDriverDataSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.JpaTransactionManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.JpaVendorAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.vendor.Database</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.vendor.HibernateJpaDialect</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.transaction.PlatformTransactionManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.transaction.annotation.EnableTransactionManagement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.MultipartResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.commons.CommonsMultipartResolver</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.controller.FileAttachmentController</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.controller.LoginController</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Attachment</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Expense</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.service.ExpenseService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.serviceImpl.JpaExpenseServiceImpl</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.serviceImpl.JpaRoleServiceImpl</span><span class="o">;</span>
+
+<span class="nd">@Configuration</span>
+<span class="nd">@EnableTransactionManagement</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComponentConfig</span> <span class="o">{</span>
+
+
+	<span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">DataSource</span> <span class="nf">dataSource</span><span class="o">()</span>  <span class="o">{</span>
+        <span class="n">SimpleDriverDataSource</span> <span class="n">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDriverDataSource</span><span class="o">();</span>
+        <span class="n">dataSource</span><span class="o">.</span><span class="na">setUrl</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"jdbc:postgresql://%s:%s/%s"</span><span class="o">,</span> <span class="s">"localhost"</span><span class="o">,</span> <span class="s">"5432"</span><span class="o">,</span> <span class="s">"postgres"</span><span class="o">));</span>
+        <span class="n">dataSource</span><span class="o">.</span><span class="na">setDriverClass</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">postgresql</span><span class="o">.</span><span class="na">Driver</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">dataSource</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"postgres"</span><span class="o">);</span>
+        <span class="n">dataSource</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">"postgres"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">dataSource</span><span class="o">;</span>
+    <span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="n">LocalContainerEntityManagerFactoryBean</span> <span class="nf">entityManagerFactory</span><span class="o">()</span> <span class="o">{</span>
+	    <span class="n">LocalContainerEntityManagerFactoryBean</span> <span class="n">emfb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalContainerEntityManagerFactoryBean</span><span class="o">();</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setJpaVendorAdapter</span><span class="o">(</span> <span class="n">jpaAdapter</span><span class="o">());</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setDataSource</span><span class="o">(</span><span class="n">dataSource</span><span class="o">());</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setJpaPropertyMap</span><span class="o">(</span><span class="n">createPropertyMap</span><span class="o">());</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setJpaDialect</span><span class="o">(</span><span class="k">new</span> <span class="n">HibernateJpaDialect</span><span class="o">());</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setPersistenceUnitName</span><span class="o">(</span><span class="s">"sample"</span><span class="o">);</span>
+	    <span class="n">emfb</span><span class="o">.</span><span class="na">setPackagesToScan</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">Expense</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getPackage</span><span class="o">().</span><span class="na">getName</span><span class="o">()});</span>
+	    <span class="k">return</span> <span class="n">emfb</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">createPropertyMap</span><span class="o">()</span>
+	<span class="o">{</span>
+		<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">=</span> <span class="k">new</span> <span class="n">HashedMap</span><span class="o">();</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">hibernate</span><span class="o">.</span><span class="na">cfg</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">HBM2DDL_AUTO</span><span class="o">,</span> <span class="s">"create"</span><span class="o">);</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">org</span><span class="o">.</span><span class="na">hibernate</span><span class="o">.</span><span class="na">cfg</span><span class="o">.</span><span class="na">Environment</span><span class="o">.</span><span class="na">HBM2DDL_IMPORT_FILES</span><span class="o">,</span> <span class="s">"import.sql"</span><span class="o">);</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"hibernate.c3p0.min_size"</span><span class="o">,</span> <span class="s">"5"</span><span class="o">);</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"hibernate.c3p0.max_size"</span><span class="o">,</span> <span class="s">"20"</span><span class="o">);</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"hibernate.c3p0.timeout"</span><span class="o">,</span> <span class="s">"360000"</span><span class="o">);</span>
+		<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"hibernate.dialect"</span><span class="o">,</span> <span class="s">"org.hibernate.dialect.PostgreSQLDialect"</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">map</span><span class="o">;</span>
+
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="n">JpaVendorAdapter</span> <span class="nf">jpaAdapter</span><span class="o">()</span> <span class="o">{</span>
+	    <span class="n">HibernateJpaVendorAdapter</span> <span class="n">hibernateJpaVendorAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HibernateJpaVendorAdapter</span><span class="o">();</span>
+	    <span class="n">hibernateJpaVendorAdapter</span><span class="o">.</span><span class="na">setShowSql</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+	    <span class="n">hibernateJpaVendorAdapter</span><span class="o">.</span><span class="na">setDatabase</span><span class="o">(</span><span class="n">Database</span><span class="o">.</span><span class="na">POSTGRESQL</span><span class="o">);</span>
+	    <span class="n">hibernateJpaVendorAdapter</span><span class="o">.</span><span class="na">setShowSql</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+	    <span class="n">hibernateJpaVendorAdapter</span><span class="o">.</span><span class="na">setGenerateDdl</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+	    <span class="k">return</span> <span class="n">hibernateJpaVendorAdapter</span><span class="o">;</span>
+	<span class="o">}</span>
+
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="n">PlatformTransactionManager</span> <span class="nf">transactionManager</span><span class="o">()</span> <span class="o">{</span>
+	    <span class="kd">final</span> <span class="n">JpaTransactionManager</span> <span class="n">transactionManager</span> <span class="o">=</span>
+	        <span class="k">new</span> <span class="nf">JpaTransactionManager</span><span class="o">();</span>
+
+	    <span class="n">transactionManager</span><span class="o">.</span><span class="na">setEntityManagerFactory</span><span class="o">(</span><span class="n">entityManagerFactory</span><span class="o">().</span><span class="na">getObject</span><span class="o">());</span>
+	    <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">jpaProperties</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;();</span>
+	    <span class="n">jpaProperties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"transactionTimeout"</span><span class="o">,</span><span class="s">"43200"</span><span class="o">);</span>
+	    <span class="n">transactionManager</span><span class="o">.</span><span class="na">setJpaPropertyMap</span><span class="o">(</span><span class="n">jpaProperties</span><span class="o">);</span>
+
+	    <span class="k">return</span> <span class="n">transactionManager</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Bean</span>
+	<span class="kd">public</span> <span class="n">MultipartResolver</span> <span class="nf">multiPartResolver</span><span class="o">(){</span>
+		<span class="n">CommonsMultipartResolver</span> <span class="n">multiPartResolver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">web</span><span class="o">.</span><span class="na">multipart</span><span class="o">.</span><span class="na">commons</span><span class="o">.</span><span class="na">CommonsMultipartResolver</span><span class="o">();</span>
+		<span class="n">multiPartResolver</span><span class="o">.</span><span class="na">setMaxUploadSize</span><span class="o">(</span><span class="mi">10000000</span><span class="o">);</span>
+		<span class="k">return</span> <span class="n">multiPartResolver</span><span class="o">;</span>
+	<span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+
+<pre><code class="language-java"><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">springsource</span><span class="o">.</span><span class="na">html5expense</span><span class="o">.</span><span class="na">config</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Value</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.MessageSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Bean</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.ComponentScan</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Configuration</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.Import</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.annotation.PropertySource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.PropertySourcesPlaceholderConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.context.support.ResourceBundleMessageSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.method.support.HandlerMethodArgumentResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.method.support.HandlerMethodReturnValueHandler</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.multipart.commons.CommonsMultipartResolver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.EnableWebMvc</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.controller.ExpenseController</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.model.Expense</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.springsource.html5expense.serviceImpl.JpaExpenseServiceImpl</span><span class="o">;</span>
+
+
+<span class="nd">@Configuration</span>
+<span class="nd">@Import</span><span class="o">(</span><span class="n">ComponentConfig</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@PropertySource</span><span class="o">(</span><span class="s">"/config.properties"</span><span class="o">)</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebConfig</span> <span class="kd">extends</span> <span class="n">WebMvcConfigurerAdapter</span>
+ <span class="o">{</span>
+     <span class="nd">@Override</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addArgumentResolvers</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">HandlerMethodArgumentResolver</span><span class="o">&gt;</span> <span class="n">argumentResolvers</span><span class="o">)</span> <span class="o">{</span>
+
+     <span class="o">}</span>
+
+    <span class="nd">@Value</span><span class="o">(</span><span class="s">"${debug}"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">debug</span><span class="o">;</span>
+
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureDefaultServletHandling</span><span class="o">(</span><span class="n">DefaultServletHandlerConfigurer</span> <span class="n">configurer</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">configurer</span><span class="o">.</span><span class="na">enable</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">MessageSource</span> <span class="nf">messageSource</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">baseNames</span> <span class="o">=</span> <span class="s">"messages,errors"</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">","</span><span class="o">);</span>
+        <span class="n">ResourceBundleMessageSource</span> <span class="n">resourceBundleMessageSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ResourceBundleMessageSource</span><span class="o">();</span>
+        <span class="n">resourceBundleMessageSource</span><span class="o">.</span><span class="na">setBasenames</span><span class="o">(</span><span class="n">baseNames</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">resourceBundleMessageSource</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">PropertySourcesPlaceholderConfigurer</span> <span class="nf">placeholderConfigurer</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">PropertySourcesPlaceholderConfigurer</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addReturnValueHandlers</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">HandlerMethodReturnValueHandler</span><span class="o">&gt;</span> <span class="n">returnValueHandlers</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+
+<span class="o">}</span></code></pre>
+
+<p>To get Spring Transaction support,annotate your class with @EnableTransactionManagement which enables Spring’s annotation-driven transaction management capability, similar to the support found in Spring’s &lt;tx:*&gt; XML namespace. </p>
+
+<p>Then configure the components using @ComponentScan which Configures component scanning directives for use with @Configuration classes. Provides support parallel with Spring XML’s <component-scan> element and pass one of basePackageClasses(), basePackages() value.</component-scan></p>
+
+<p>Then modify your web.xml to load this Config class as part of your contextConfiglocation or create your custom class to initialize ApplicationContext by implementing WebApplicationInitializer interface.Override onStartUp() method of WebApplicationInitializer and create AnnotationConfigWebApplicationContext.</p>
+<pre><code class="language-java">		<span class="n">AnnotationConfigWebApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AnnotationConfigWebApplicationContext</span><span class="o">();</span>
+		<span class="n">applicationContext</span><span class="o">.</span><span class="na">setServletContext</span><span class="o">(</span><span class="n">sc</span><span class="o">);</span>
+		<span class="n">applicationContext</span><span class="o">.</span><span class="na">register</span><span class="o">(</span><span class="n">AppConfig</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+		<span class="n">applicationContext</span><span class="o">.</span><span class="na">refresh</span><span class="o">();</span></code></pre>
+
+<h2 id="add-spring-security-to-expensereport-app">Add Spring Security to ExpenseReport App</h2>
+
+<p>This section provides how to get integrate ExpenseReport App with Spring Security.
+Before start,add the following dependencies in your pom.xml,</p>
+
+<ul>
+<li>spring-security-core.jar</li>
+  <li>spring-security-web.jar</li>
+  <li>spring-security-config.jar</li>
+</ul><h2 id="enable-spring-security">Enable Spring Security:</h2>
+
+<p>To enable Spring security we need to add the following steps:</p>
+
+<ol>
+<li>
+    <p>Add a DelegatingFilterProxy in the web.xml</p>
+  </li>
+  <li>
+    <p>Declare a custom XML config named spring-security.xml</p>
+  </li>
+</ol><p>In the web.xml we declare an instance of a DelegatingFilterProxy.This will filter the requests based on the declared url-pattern.</p>
+<pre><code class="language-xml"><span class="nt">&lt;filter&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;filter-class&gt;</span>org.springframework.web.filter.DelegatingFilterProxy<span class="nt">&lt;/filter-class&gt;</span>
+<span class="nt">&lt;/filter&gt;</span>
+<span class="nt">&lt;filter-mapping&gt;</span>
+    <span class="nt">&lt;filter-name&gt;</span>springSecurityFilterChain<span class="nt">&lt;/filter-name&gt;</span>
+    <span class="nt">&lt;url-pattern&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+<span class="nt">&lt;/filter-mapping&gt;</span></code></pre>
+
+<p>In the spring-security.xml,define HTTP security configuration by adding http tag.And define which url pattern to intecept.</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;http</span> <span class="na">auto-config=</span><span class="s">"true"</span> <span class="na">use-expressions=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;intercept-url</span> <span class="na">pattern=</span><span class="s">"/index.jsp"</span> <span class="na">access=</span><span class="s">"hasAnyRole		('ROLE_USER','ROLE_MANAGER')"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;form-login</span> <span class="na">login-page=</span><span class="s">"/login"</span> <span class="na">default-target-url=</span><span class="s">"/welcome"</span>
+			<span class="na">authentication-failure-url=</span><span class="s">"/loginfailed"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;logout</span> <span class="na">logout-success-url=</span><span class="s">"/logout"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/http&gt;</span></code></pre>
+
+<p>Create Logincontroller and add the mapping for login,logout,loginfailed.</p>
+
+<p>Define dataSource bean,to get database connection</p>
+<pre><code class="language-xml"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"dataSource"</span> <span class="na">class=</span><span class="s">"org.springframework.jdbc.datasource.SimpleDriverDataSource"</span><span class="nt">&gt;</span>
+ 
+			<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"driverClass"</span> <span class="na">value=</span><span class="s">"org.postgresql.Driver"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">value=</span><span class="s">"jdbc:postgresql://192.168.6.30:5432/postgres"</span> <span class="nt">/&gt;</span>
+			<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"postgres"</span> <span class="nt">/&gt;</span>
+		<span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"postgres"</span> <span class="err">/</span></code></pre>
+
+<p>In Spring Security configuration file,add “jdbc-user service” tag and define the query to get the data from database.</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;authentication-manager&gt;</span>
+	   <span class="nt">&lt;authentication-provider&gt;</span>
+		<span class="nt">&lt;jdbc-user-service</span> <span class="na">data-source-ref=</span><span class="s">"dataSource"</span>
+ 
+		   <span class="na">users-by-username-query=</span><span class="s">"</span>
+<span class="s">		      select username,password, enabled </span>
+<span class="s">		      from users where username=?"</span> 
+ 
+		   <span class="na">authorities-by-username-query=</span><span class="s">"</span>
+<span class="s">		      select u.username, ur.authority from users u, user_roles ur </span>
+<span class="s">		      where u.user_id = ur.user_id and u.username =?  "</span> 
+ 
+		<span class="nt">/&gt;</span>
+	   <span class="nt">&lt;/authentication-provider&gt;</span>
+	<span class="nt">&lt;/authentication-manager&gt;</span></code></pre>
+
+<p>To load this file as part of configuration add @ImportResource({ “classpath:spring-security.xml”}). in ComponentConfig class.</p>
+
+<p>create custom login.jsp with two input elements for username and password as j_username and j_password.These are spring’s placeholder for the username and password respectively.</p>
+
+<p>when the form is submitted ,it will be sent to the following action URL:
+j_spring_security_check.</p>
+
+<p>Add logout functionality:
+   add j_spring_security_logout link in your application. once your clicked this link,spring invalidate user session.</p>
+
+<h2 id="build-and-run-the-app-locally">Build and Run the App Locally</h2>
+
+<pre><code>  Now we have successfully created expensereport application.we can run the application in locally to test it.STS has Fabric tc server,select and add your project to server now click finish. ![STS Fabric Server.png](/images/spring_tutorial/localhost_login.png)
+</code></pre>
+
+<p>Once server starts completed,STS will open the home page for the project which dispalys login page.</p>
+
+<p><img src="/images/spring_tutorial/localhost_login.png" alt="spring-expensereport-login.png"></p>
+
+<p><img src="/images/spring_tutorial/create_new_expense.png" alt="spring-expensereport-create_expense.png"></p>
+
+<p><img src="/images/spring_tutorial/my_expense.png" alt="spring-expensereport-user_expense.png"></p>
+
+<h2 id="deploy-the-app-on-cloud-foundry-using-vmc">Deploy the App on Cloud Foundry Using VMC</h2>
+<p>Deployment to Cloud Foundry can be done in two simple steps:</p>
+
+<ul>
+<li>Create war file</li>
+  <li>Push the war file using <code>vmc push</code>
+</li>
+</ul><p>Commands below show the exact commands and output when the app is deployed:</p>
+
+<p>Go to your project work space and issue the following commands.</p>
+
+<pre class="terminal">
+$ mvn war:war
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building SpringMVC-ExpenseReport 1.0.0-BUILD-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-war-plugin:2.1.1:war (default-cli) @ html5expense ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [html5expense] in [/home/senthils/Code/From Home/SpringMVC-ExpenseReport/target/html5expense-1.0.0-BUILD-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/senthils/Code/From Home/SpringMVC-ExpenseReport/src/main/webapp]
+[INFO] Webapp assembled in [380 msecs]
+[INFO] Building war: /home/senthils/Code/From Home/SpringMVC-ExpenseReport/target/html5expense-1.0.0-BUILD-SNAPSHOT.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 4.443s
+[INFO] Finished at: Mon Sep 17 15:57:50 IST 2012
+[INFO] Final Memory: 6M/124M
+[INFO] ------------------------------------------------------------------------
+
+$ vmc push
+Would you like to deploy from the current directory? [Yn]: /home/senthils/.rvm/gems/ruby-1.9.2-head/gems/interact-0.4.8/lib/interact/interactive.rb:569: warning: Insecure world writable dir /home/senthils/Downloads/springsource in PATH, mode 040777
+
+Application Name: html5expense
+Detected a Java SpringSource Spring Application, is this correct? [Yn]: Y
+Application Deployed URL [html5expense.cloudfoundry.com]: 
+Memory reservation (128M, 256M, 512M, 1G, 2G) [512M]: 128M
+How many instances? [1]: 
+Bind existing services to 'html5expense'? [yN]: 
+Create services to bind to 'html5expense'? [yN]: Y
+1: mongodb
+2: mysql
+3: postgresql
+4: rabbitmq
+5: redis
+What kind of service?: 3
+Specify the name of the service [postgresql-94876]: 
+Create another? [yN]: 
+Would you like to save this configuration? [yN]: 
+Creating Application: OK
+Creating Service [postgresql-94876]: OK
+Binding Service [postgresql-94876]: OK
+Uploading Application:
+  Checking for available resources: OK
+  Processing resources: OK
+  Packing application: OK
+  Uploading (10K): OK   
+Push Status: OK
+Staging Application 'html5expense': OK                                          
+Starting Application 'html5expense': OK
+</pre>
+
+<h2 id="deploy-the-app-on-cloud-foundry-using-sts">Deploy the App on Cloud Foundry Using STS</h2>
+
+<ol>
+<li>
+    <p>Go to servers view,right click add New Server.Now you can see Cloud Foundry under VMware.Select Cloud Foundry,then click next.It will ask your account information and Choose VMware Cloud Foundry - http://api.cloudfoundry.com from the URL.
+<img src="/images/spring_tutorial/cloud_foundry.png" alt="spring-expensereport-login.png"></p>
+  </li>
+  <li>
+    <p>Now give your Cloud Foundry account information.Click validate and make sure you have entered  valid credentials.
+<img src="/images/spring_tutorial/cloud_foundry_account.png" alt="cloud foundry account information.png"></p>
+  </li>
+  <li>
+    <p>Click next it will show you add and remove view.Now you can select our spring application.Once you added your application it will open new window with application name and application type.You can enter your application name.
+<img src="/images/spring_tutorial/cloud_foundry_project_deploy.png" alt="spring-expensereport-login.png"><img src="/images/spring_tutorial/project_deploy_step2.png" alt="spring-expensereport-project-deploy.png"></p>
+  </li>
+  <li>
+    <p>Click next you can see deployed URL(your application name+cloudfoundry.com) and memory reservation.by default memory reservation selected to 512M.You can increase memory if required..
+<img src="/images/spring_tutorial/project_deploy_step3.png" alt="spring-expensereport-project-deploy-step-2.png"></p>
+  </li>
+  <li>
+    <p>Click next now it will ask for services selection.Since we are using postgresql in our application we need to add postgresql service.Click add services to server it will open service configuration window.select type as Postgre SQL database service(VFabric) and give name to this service then click 
+<img src="/images/spring_tutorial/service_selection.png" alt="service_selection.png"><img src="/images/spring_tutorial/create_new_service.png" alt="create_new_service.png"></p>
+  </li>
+  <li>
+    <p>Now you can see your services in services selection window.Select postgresql service and click finish.Now server starts to deploy our application into Cloud Foundry.
+<img src="/images/spring_tutorial/service_selection_1.png" alt="spring-expensereport-login.png"></p>
+  </li>
+</ol><p>Upon completion of deployment, we can go and visit the actual app at the URL <code>[app-name].cloudfoundry.com]</code></p>
+
+<p><img src="/images/spring_tutorial/deployed_application_in_cloud_foundry.png" alt="deployed_application_in_cloud_foundry.png"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>

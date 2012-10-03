@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/faq.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | FAQ' property='og:title'>
+<meta content='Frequently Asked Questions' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | FAQ</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Documentation</h1>
+<p class='sub-head'>FAQ</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Frequently Asked Questions</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/faq" rel="tag">faq</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-08-30
+</span>
+</p>
+<div id='social-share'></div>
+<h3 id="how-do-i-get-started-on-cloud-foundry">How Do I Get Started on Cloud Foundry</h3>
+<p>For resources on getting started with Cloud Foundry, please refer to our <a href="/getting-started.html">Getting Started Guide</a>.</p>
+
+<h3 id="how-can-i-change-my-cloudfoundrycom-password">How can I change my CloudFoundry.com password?</h3>
+
+<p>Please use the following link to reset your CloudFoundry.com password: <a href="https://my.cloudfoundry.com/passwd">https://my.cloudfoundry.com/passwd</a></p>
+
+<h3 id="im-having-trouble-with-my-login-credentials">I’m having trouble with my login credentials</h3>
+
+<p>Here are a few things you can do to make sure that you are using your credentials correctly:</p>
+
+<ul>
+<li>Verify that your target is set correctly ($vmc target api.cloudfoundry.com)</li>
+  <li>Check the target ($vmc target and $vmc info)</li>
+  <li>Verify that you are using the vmc client ($vmc login [email] [password] )</li>
+</ul><p>Please try with the temporary password provided in the Welcome email from Cloud Foundry after sign-up.  If you had subsequently changed that with a ‘vmc passwd’ command, please try with that password also.</p>
+
+<p>If you are still not able to use vmc, open a ticket by clicking on the “Submit a request” tab. Make sure to provide us with the details and the support team will look into it for you.</p>
+
+<h3 id="why-cant-i-register-the-application-name-i-want">Why can’t I register the application name I want?</h3>
+
+<p>Application names must be longer than 3 characters. In addition, please note that some names are reserved and will not be allowed even if they are of the right length.</p>
+
+<p>If you receive the message: “The URI: ‘fo.cloudfoundry.com’ has already been taken or reserved”, please pick another name for your application.</p>
+
+<h3 id="can-apps-use-the-local-file-system-for-storage">Can apps use the local file system for storage?</h3>
+<p>Your application needs to treat local file storage as ephemeral, which can disappear when your application stops, crashes, or moves. It should not be used for durable storage of content such as user-uploaded files. Further, if more than one instance of your app is running the local storage is only visible to a specific instance of the app, and is not visible or shared across all instances. If persistent storage is required, a local service such as <a href="http://www.mongodb.org/display/DOCS/GridFS">MongoDB GridFS</a> or external blob stores such as <a href="http://developers.blog.box.com/2011/12/14/deploying-to-cloud-foundry-and-heroku-from-box/">Box.net</a> or <a href="http://aws.amazon.com/s3/">Amazon S3</a> can be used.</p>
+
+<h3 id="is-there-session-support">Is there session support?</h3>
+<p>When scaling an app to multiple instances the topic of session management arises. Cloud Foundry uses session affinity, also known as sticky sessions: when a user login request is handled by a particular instance of your app, future requests from that user/session will be routed to the same app instance. Sticky sessions are provided for all apps and do not have to be configured, with the exception of Node.js. Node.js apps need to set a cookie named JSESSIONID to a unique value for each user/session.</p>
+
+<p>Cloud Foundry does not offer session replication: if the particular instance crashes the user is routed to another instance which won’t have authentication data in the session, and the user will have to log in again.</p>
+
+<h3 id="what-happens-when-a-service-runs-out-of-capacity">What happens when a service runs out of capacity?</h3>
+<p>When a service runs out of capacity (e.g. MySQL hits the 128MB size limit), the service switches to a read/delete-only mode. For example, on a SQL service removing data and reading data is allowed, but writing more data is disabled:</p>
+
+<pre class="terminal">
+delete from table where ... # allowed
+drop table ... # allowed
+select ... from ... # allowed
+insert into ... # not allowed
+update ... # not allowed
+</pre>
+
+<p>The application bound to a service that has run out of capacity may see errors such as “INSERT is disabled.” Other services (redis, MongoDB) will exhibit similar behavior.</p>
+
+<h3 id="can-i-send-and-receive-email-from-my-app">Can I send and receive email from my app?</h3>
+<p>Applications cannot send outbound email via TCP port 25. An app can use an external email service available on a different port (such as 587 for SMTP-AUTH). Applications cannot receive email by listening on port 25 either. We recommend using an external mail service such as <a href="http://sendgrid.com/">SendGrid</a> or <a href="http://mailgun.net/">Mailgun</a>.</p>
+
+<h3 id="is-there-a-firewall-that-prevents-my-app-from-accessing-external-services">Is there a firewall that prevents my app from accessing external services?</h3>
+<p>No, your application has direct access to the internet with the exception of connecting to TCP port 25 (used for sending email).</p>
+
+<h3 id="why-is-my-app-returning-504-gateway-time-out-errors">Why is my app returning “504 Gateway Time-out” errors?</h3>
+<p>The error page originates from the CloudFoundry.com HTTP Router and not your application. Application requests taking longer than 30 seconds are terminated by the Router. The 30-second timeout cannot be adjusted and applies to all apps running on CloudFoundry.com. However, the Router supports long-polling and streaming on a rolling 30-second window: if an application sends data to a client within 30 seconds, the timeout counter is reset and starts again at 30 seconds. To troubleshoot 504 errors, please investigate what is causing the delayed response from an app and ensure data is returned every 30 seconds.</p>
+
+<h3 id="im-having-issues-with-httpproxy">I’m having issues with HTTP_proxy</h3>
+
+<p>When CloudFoundry.com launched in April 2011, applications making outbound requests had to use an HTTP proxy (for about the first 10 days of operation). When we removed the need for a proxy, we did not eliminate the HTTP_PROXY, http_proxy, etc. environment variables. These variables used to be made available to your application, however, now we are eliminating the HTTP_PROXY, HTTPS_PROXY, http_proxy, https_proxy, no_proxy, NO_PROXY. For the vast majority of applications, this change will have no effect. All well written applications either use http client classes that correctly process and use proxy related environment variables, OR the application writer codes his algorithms to correctly use the proxy environment variables when they are present.</p>
+
+<p>However, some applications may  be hard-coded to look up one or all of the following proxy-related environment variables and either use the values incorrectly, OR not correctly handle the absence of an environment variable. The variables:</p>
+
+<pre class="terminal">
+- http_proxy
+
+- HTTP_PROXY
+
+- https_proxy
+
+- HTTPS_PROXY
+
+- no_proxy
+
+- NO_PROXY
+</pre>
+
+<p>As of May 14th, 2012 these environment variables will not be defined for apps on CloudFoundry.com. If your app is not working as expected, please check your code for any references to the above variables and remove them. The safest method would be searching for any references to proxy in your application root:</p>
+
+<pre class="terminal">
+$ cd myapp
+$ grep -i -r proxy .
+</pre>
+
+<h3 id="what-runtimes-are-supported-on-cloudfoundrycom-beta">What runtimes are supported on CloudFoundry.com (beta)?</h3>
+
+<p>Use the vmc runtimes command to view the complete list of supported runtimes ($vmc runtimes)</p>
+
+<h3 id="what-are-the-account-application-and-service-limits-for-my-cloudfoundrycom-beta-account">What are the account, application and service limits for my CloudFoundry.com (beta) account?</h3>
+
+<p><strong>Account Limits</strong></p>
+
+<p>Limits associated with a user account in CloudFoundry.com (beta) can be obtained using the following command.</p>
+
+<pre class="terminal">
+$ vmc info
+
+VMware's Cloud Application Platform
+For support visit support@cloudfoundry.com
+
+Target:   http://api.cloudfoundry.com (v0.999)
+Client:   v0.3.10
+
+User:     user@email.com
+Usage:    Memory   (256.0M of 2.0G total)
+          Services (1 of 16 total)
+          Apps     (2 of 20 total)
+</pre>
+
+<p>For accounts:
+Applications are limited to 20.
+Service instances are limited to 16.
+Memory is limited to 2GB.</p>
+
+<p><strong>Application Limits</strong></p>
+
+<p>For each application:
+Memory is limited to 2GB.
+Disk space is limited to 2GB.
+CPU	is limited to the fair share of 4 cores.
+Network	is limited to your fair share.
+File descriptors are limited to	256.
+URIs are limited to 4.</p>
+
+<p>Total Number of Instances: Limited by the amount of reservable memory, 2GB.  For example, if you reserve 128M for an application, you can have upto 16 instances, 256M -&gt; 8 instances, 512M -&gt; 4 instances and so on.  (assuming just one application).</p>
+
+<p>Also, per-application usage statistics are available using the following command:</p>
+
+<pre class="terminal">
+$ vmc stats &lt;appname&gt;
+
++----------+-------------+----------------+--------------+--------------+
+| Instance | CPU (Cores) | Memory (limit) | Disk (limit) | Uptime       |
++----------+-------------+----------------+--------------+--------------+
+| 0        | 0.0% (1)    | 19.4M (128M)   | 14.5M (2G)   | 0d:2h:13m:6s |
++----------+-------------+----------------+--------------+--------------+
+</pre>
+
+<p>Memory : 19.4M used, 128M reserved.  ($ vmc mem appname command can be used to update the memory reservation, please note that this will restart the application)</p>
+
+<p>Disk : 14.M used of 2G limit</p>
+
+<p><strong>Service Limits</strong></p>
+
+<p>For services:
+MySQL DB size is limited to	128MB.
+Redis memory is limited to 16MB.
+MongoDB memory is limited to 240MB.</p>
+
+<h3 id="my-app-stopped-running">My app stopped running.</h3>
+
+<p>If any application stops running without the end user initiating that action, we consider it a crash.</p>
+
+<p>When an application crashes, vcloudlabs will maintain the crashed state for a period of time for introspection.</p>
+
+<p>You can see this state via **vmc crashlogs <appname>**</appname></p>
+
+<p>In the case of an app running successfully and then crashing, it could be something app specific or it could be that the application is using more resources than it is allowed.</p>
+
+<p><strong>vmc info</strong></p>
+
+<p>This will show you the account wide resources for memory, services, and application instances. This is a good place to check first.</p>
+
+<p><strong>vmc stats &lt;appname&gt;</strong></p>
+
+<p>This will show you detailed information on the resource usage of your application. So for instance, the application that runs <a href="http://www.cloudfoundry.com/">http://www.cloudfoundry.com</a>, named <strong>www</strong>, outputs the following:</p>
+
+<p><strong>~&gt; vmc stats www</strong></p>
+
+<p>Instance   CPU (Cores)     Memory (limit)  Disk (limit)    Uptime
+———  ———–     ————–  ————    ——
+0          0.0% (8)        29.2M (64M)     824.0K (2G)     60d:19h:53m:58s
+1          0.0% (8)        29.3M (64M)     816.0K (2G)     60d:19h:50m:3s</p>
+
+<p>This will show you various resource usage levels and their current limits.</p>
+
+<p>Currently CloudFoundry.com will terminate applications that exceed their memory or disk limits. This information will be available through the crashlogs command to vmc as outlined above.</p>
+
+<p>If your app is stopping unexpectedly after running for some time, and you don’t suspect your app, please use this checklist to see if you are running into a resource limit issue.</p>
+
+<h3 id="im-getting-the-vmc-error-the-input-stream-is-exhausted">I’m getting the VMC Error: ‘The input stream is exhausted’</h3>
+
+<p><strong>Problem</strong></p>
+
+<p>On some Mac OSX releases the stock ruby installed causes vmc client tool to fail emitting following error.  This is due to a library (used by vmc) incompatibility with the packaged ruby that comes with OSX.</p>
+
+<p>For example in Mac OSX Lion, the stock ruby is 1.8.7 with patchlevel 249</p>
+
+<pre class="terminal">
+$ ruby --version
+ruby 1.8.7 (2010-01-10 patchlevel 249) [universal-darwin11.0]
+</pre>
+
+<p>And the error shows up during vmc transaction as</p>
+
+<p><code>bash
+$ vmc push
+Would you like to deploy from the current directory? [Yn]: The input stream is exhausted.
+/Library/Ruby/Gems/1.8/gems/highline-1.6.2/lib/highline.rb:608:in `get_line'
+/Library/Ruby/Gems/1.8/gems/highline-1.6.2/lib/highline.rb:629:in `get_response'
+/Library/Ruby/Gems/1.8/gems/highline-1.6.2/lib/highline.rb:216:in `ask'
+/Library/Ruby/Gems/1.8/gems/vmc-0.3.12/lib/cli/commands/apps.rb:370:in `push'
+/Library/Ruby/Gems/1.8/gems/vmc-0.3.12/lib/cli/runner.rb:428:in `send'
+/Library/Ruby/Gems/1.8/gems/vmc-0.3.12/lib/cli/runner.rb:428:in `run'
+/Library/Ruby/Gems/1.8/gems/vmc-0.3.12/lib/cli/runner.rb:14:in `run'
+/Library/Ruby/Gems/1.8/gems/vmc-0.3.12/bin/vmc:5
+/usr/bin/vmc:19:in `load'
+/usr/bin/vmc:19
+</code></p>
+
+<p><strong>Solution</strong></p>
+
+<p>Solution to this problem is to install <a href="https://rvm.beginrescueend.com/">RVM</a> (Ruby Version Manager) and install and use 1.8.7 (or 1.9.2).  Typically higher patchlevels will get installed.  But please note that even if you install the same patchlevel as the stock ruby the problem will be solved.</p>
+
+<p>A quick guide to installing RVM:
+1.  Install rvm (<a href="http://beginrescueend.com/rvm/install/">http://beginrescueend.com/rvm/install/</a>)
+2.  Add the below lines to ~/.bash_profile file
+&lt;pre class="terminal"&gt;
+# Ruby Version Manager
+[[ -s "$HOME/.rvm/scripts/rvm" ]] &amp;&amp; . "$HOME/.rvm/scripts/rvm"
+&lt;/pre&gt;</p>
+
+<ol>
+<li>Open new terminal</li>
+  <li>Re-install ruby 1.9.2 using rvm and also re-install the vmc gem under rvm installed ruby
+&lt;pre class="terminal"&gt;
+$ rvm install 1.9.2
+$ rvm use 1.9.2
+$ gem install vmc</li>
+</ol><p>&lt;/pre&gt;</p>
+
+<p><strong>Sample Use</strong></p>
+
+<p>Here is a transcript using rvm installed ruby.</p>
+
+<pre class="terminal">
+$ rvm use 1.8.7-p249
+Using /Users/Alex/.rvm/gems/ruby-1.8.7-p249
+</pre>
+
+<pre class="terminal">
+$ ruby --version
+ruby 1.8.7 (2010-01-10 patchlevel 249) [i686-darwin11.0.0]
+</pre>
+
+<pre class="terminal">
+$ vmc push
+Would you like to deploy from the current directory? [Yn]:
+Application Name: hello-sinatra
+Application Deployed URL: 'hello-sinatra.cloudfoundry.com'? hello-sinatra-alexsuraci.cloudfoundry.com
+Detected a Sinatra Application, is this correct? [Yn]:
+Memory Reservation [Default:128M] (64M, 128M, 256M, 512M or 1G)
+Creating Application: OK
+Would you like to bind any services to 'hello-sinatra'? [yN]:
+Uploading Application:
+  Checking for available resources: OK
+  Packing application: OK
+  Uploading (2K): OK
+Push Status: OK
+Staging Application: OK
+Starting Application: OK
+</pre>
+
+<h3 id="can-i-use-hyperic-to-monitor-my-applications-on-cloud-foundry">Can I use Hyperic to monitor my applications on Cloud Foundry?</h3>
+
+<p><a href="http://blog.cloudfoundry.com/2011/06/29/hyperic-brings-application-monitoring-to-cloud-foundry/">Yes</a></p>
+
+<h3 id="my-rubysinatrarails-app-is-failing-on-start">My Ruby/Sinatra/Rails app is failing on start.</h3>
+
+<p>When performing a vmc push for a Ruby/Sinatra/Rails app, and after answering all the prompted questions, you might see this error:</p>
+
+<p>Starting Application: …………Error: Application [APP]’s state
+is undetermined, not enough information available.</p>
+
+<p>The reason for this error is likely a missing gem or gems. Depending on where the issue occurred, additional details are typically found in one of 4 logs: staging.log, migration.log, stderr.log, and stdout.log</p>
+
+<p>To diagnose: use “vmc files app-name logs” to view the log files, and then “vmc files app-name logs/stderr.log” to view a log.</p>
+
+<p>In Cloud Foundry, we require that all gem dependencies are formally called out. For a simple Sinatra app, a simple Gemfile like this (in the root directory) is the typical fix:</p>
+
+<p>Gemfile contains:</p>
+
+<pre class="terminal">
+source "http://rubygems.org"
+gem 'bundler'
+gem 'sinatra'
+gem 'json'
+gem 'httpclient'
+gem 'redis'
+</pre>
+
+<p>With this in place, run “bundle package; bundle install” to correct the problem</p>
+
+<p>If you can not find the missing elements for upload, see if you can find the answer in the forums or create your own question thread. Alternatively send us an e-mail to support.cloudfoundry.com and we will try to help.</p>
+
+<p>One of the common causes for the sample demo applications (hello.rb) as shown in our demos failing to start is due to copy/paste, which copies in smart quotes and causes the application to not run.  Please type in the demo application by hand.  Also, please make sure that you do not have any extraneous tab (\t) characters in the source file, and replace them with spaces.</p>
+
+<h3 id="is-there-a-getting-started-guide-in-japanese">Is there a Getting Started guide in Japanese?</h3>
+
+<p><a href="/getting-started-japanese.html">Yes</a></p>
+
+<h3 id="how-can-i-update-my-application-without-dropping-user-traffic">How can I update my application without dropping user traffic?</h3>
+
+<p>In general, when developing and testing applications with Cloud Foundry, <strong>vmc update</strong> fits the bill quite well.</p>
+
+<p>However, when an app is considered “live”, like our own www site, you should follow the steps below that will ensure no user requests are drop during the transition.</p>
+
+<p>We use the concept of a new application that will assume the URL space of the original application.</p>
+
+<p>Here is how to update your application without any downtime:</p>
+
+<p>NOTE: ‘vmc update’ will drop traffic..</p>
+
+<ul>
+<li>vmc push [app]NEW (bind any shared services, like DB, Cache, etc)</li>
+</ul><p>TEST [app]NEW.cloufoundry.com</p>
+
+<ul>
+<li>vmc map [app]NEW [app].cloudfoundry.com</li>
+</ul><p>TEST [app].cloudfoundry.com several times, looping through new and old now..</p>
+
+<ul>
+<li>vmc unmap [app]OLD [app].cloudfoundry.com # Does not drop traffic, just kills all new traffic</li>
+</ul><p>TEST</p>
+
+<ul>
+<li>vmc delete [app]OLD</li>
+</ul><h3 id="my-application-is-still-reporting-as-running-even-after-exiting">My application is still reporting as running even after exiting.</h3>
+
+<p>If you exit an app using System.exit(), Tomcat’s security manager will prevent the process from terminating. This will cause the system to report the application as running. We will be adding a custom health check so that app terminated in this way may be detected by the system.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>

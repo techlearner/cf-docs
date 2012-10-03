@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<!--[if IE]>  <![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" dir="ltr" class="no-js old_ie ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" dir="ltr" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<html lang='en' xmlns:og='http://ogp.me/ns#'>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='VMware' name='author'>
+<meta content='Copyright VMware 2011. All Rights Reserved.' name='copyright'>
+<meta content='juhk3p2B-UhzEjLXtqFwDMVLo5Lmy4ZP-zVe7Gxo2Dw' name='google-site-verification'>
+<meta content='en-us' http-equiv='Content-Language'>
+<meta content='false' http-equiv='imagetoolbar'>
+<meta content='true' name='MSSmartTagsPreventParsing'>
+<meta content='all' name='robots'>
+<meta content='147862838623179' property='fb:app_id'>
+<meta content='website' property='og:type'>
+<meta content='https://docs.cloudfoundry.com/frameworks/java/spring/spring_tutorial.html' property='og:url'>
+<meta content='https://docs.cloudfoundry.com/images/cf100.png' property='og:image'>
+<meta content='Cloud Foundry | Spring' property='og:title'>
+<meta content='Spring Application Development with Cloud Foundry' property='og:description'>
+<meta content='en_US' property='og:locale'>
+<title>Cloud Foundry | Spring</title>
+<link href='/stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/master.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='favicon.ico' rel='shortcut icon'>
+<link href='/stylesheets/uv_active4d.css' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/documentation.css' media='screen' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/pygments.css' media='screen' rel='stylesheet' type='text/css'>
+<script src='/js/jquery-1.6.4.min.js' type='text/javascript'></script>
+<script src='/js/documentation.js' type='text/javascript'></script>
+<script src='/js/jquery.easing.js' type='text/javascript'></script>
+<script src='/js/jquery.social.share.1.2.min.js' type='text/javascript'></script>
+<!--[if lt IE 9 ]> <link href="/stylesheets/ie.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<!--[if lt IE 8 ]> <link href="/stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" /> <![endif]-->
+<link href='/stylesheets/master-cf.css' media='screen' rel='stylesheet' type='text/css'>
+</head>
+<body class='api'>
+<div class='wrapper'>
+<div class='container' id='header'>
+<div class='site-wrap'>
+<div class='container'>
+<div class='span-6 logo-wrap'>
+<a href='http://www.cloudfoundry.com'>
+<img alt="Cloud Foundry: The Industry's First Open Platform As A Service" height='70' src='/images/logo_header_cloudfoundry.png' width='373'>
+<span class='replaced'>Cloud Foundry: The Industry's First Open Platform As A Service</span>
+</img>
+</a>
+</div>
+<div class='span-9 last'>
+<div class='right'>
+<form action='http://www.cloudfoundry.com/search' class='search-form' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input' name='q' placeholder='search' type='text' value=''>
+</form>
+<ul class='super-nav'>
+<li>
+<a href='http://my.cloudfoundry.com/signup'>Get an Account</a>
+</li>
+<li>
+<a href='http://my.cloudfoundry.com/micro'>Download Micro</a>
+</li>
+<li>
+<a href='http://support.cloudfoundry.com' rel='external' target='_blank'>Support</a>
+</li>
+<li>
+<a href='http://status.cloudfoundry.com' target='_blank'>Status</a>
+</li>
+</ul>
+</div>
+<div id='nav'>
+<ul>
+<li class='selected'>
+<a href='/getting-started.html'>Get Started</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/getinvolved'>Get Involved</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/partners'>Partners</a>
+</li>
+<li>
+<a href='http://blog.cloudfoundry.com'>Blog</a>
+</li>
+<li>
+<a href='http://www.cloudfoundry.com/about'>About</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='main'>
+<div class='content-wrap'>
+<div class='header-wrap clearfix'>
+<div class='site-wrap'>
+<h1>Frameworks</h1>
+<p class='sub-head'>Spring</p>
+</div>
+</div>
+<div class='site-wrap'>
+<div class='container content'>
+<div class='span-15 prepend-top'>
+<div class='span-4'>
+<div class='sub-nav'>
+<p>
+<strong>
+<a href='/getting-started.html'>Getting Started</a>
+</strong>
+Quick steps to deploy your app.
+</p>
+<form action='http://www.cloudfoundry.com/search' class='search-form-docs' method='get' onsubmit='return submitQuery()'>
+<input autocomplete='off' class='search-input-docs' name='q' placeholder='search docs' type='text' value='more:docs'>
+</form>
+<br>
+<br>
+<div class='sidebar-shell' id='js-sidebar'>
+<div class='js-accordion-list sidebar-module'>
+<ul>
+<li class='js-topic'>
+<h3>
+<a href='#'>Frameworks & Languages</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring.html'>Spring</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/java/spring/spring-insight.html'>Spring Insight</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/grails.html'>Grails</a>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/scala/scala.html'>Scala</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/scala/lift.html'>Lift</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/play/play.html'>Play</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/play/java-getting-started.html'>Java Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/scala-getting-started.html'>Scala Getting Started</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mysql.html'>Java App with MySQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-postgresql.html'>Java App with PostgreSQL</a>
+</li>
+<li>
+<a href='/frameworks/play/java-mongodb.html'>Java App with MongoDB</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/nodejs/nodejs.html'>Node.js</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/nodejs/nodeAutoReconfig.html'>Configuration</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/frameworks/ruby/ruby-rails-sinatra.html'>Ruby, Rails, Sinatra</a>
+<ul class='js-subguides'>
+<li>
+<a href='/frameworks/ruby/ruby.html'>Overview</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-cf.html'>Things to Know</a>
+</li>
+<li>
+<a href='/frameworks/ruby/installing-ruby.html'>Installing Ruby</a>
+</li>
+<li>
+<a href='/frameworks/ruby/ruby-simple.html'>Creating an App</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-0.html'>Rails 3.0</a>
+</li>
+<li>
+<a href='/frameworks/ruby/rails-3-1.html'>Rails 3.1</a>
+</li>
+<li>
+<a href='/frameworks/ruby/sinatra.html'>Sinatra</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Infrastructure</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/infrastructure/overview.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/infrastructure/micro/mcf.html'>MCF</a>
+<ul class='js-subguides'>
+<li>
+<a href='/infrastructure/micro/installing-mcf.html'>Installing MCF</a>
+</li>
+<li>
+<a href='/infrastructure/micro/using-mcf.html'>Using MCF</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Services</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/services.html'>Overview</a>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mongodb/mongodb.html'>MongoDB</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mongodb/grails-mongodb.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mongodb/nodejs-mongodb.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/mongodb/ruby-mongodb-gridfs.html'>GridFS</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/mysql/mysql-overview.html'>MySQL</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/mysql/mysql.html'>Introduction</a>
+</li>
+<li>
+<a href='/services/mysql/grails-mysql.html'>Grails</a>
+</li>
+<li>
+<a href='/services/mysql/ruby-mysql.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/rabbitmq/rabbitmq.html'>RabbitMQ</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/rabbitmq/faq-rabbitmq.html'>FAQ</a>
+</li>
+<li>
+<a href='/services/rabbitmq/nodejs-rabbitmq.html'>Node.js</a>
+</li>
+<li>
+<a href='/services/rabbitmq/ruby-rabbitmq.html'>Ruby</a>
+</li>
+<li>
+<a href='/services/rabbitmq/spring-rabbitmq.html'>Spring</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/redis/redis.html'>Redis</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/redis/ruby-redis.html'>Ruby</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/services/postgres/postgres.html'>vFabric Postgres</a>
+<ul class='js-subguides'>
+<li>
+<a href='/services/postgres/postgres-ruby.html'>Ruby</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tools</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/tools/vmc/vmc.html'>VMC</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/vmc/installing-vmc.html'>Installing</a>
+</li>
+<li>
+<a href='/tools/vmc/debugging.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-quick-ref.html'>Quick Reference</a>
+</li>
+<li>
+<a href='/tools/vmc/vmc-non-interactive.html'>Non-Interactive Mode</a>
+</li>
+<li>
+<a href='/tools/vmc/caldecott.html'>Caldecott</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/STS/sts-eclipse.html'>STS & Eclipse</a>
+<ul class='js-subguides'>
+<li>
+<a href='/tools/STS/configuring-STS.html'>Configuring</a>
+</li>
+<li>
+<a href='/tools/STS/debugging-CF-Eclipse.html'>Debugging</a>
+</li>
+<li>
+<a href='/tools/STS/deploying-CF-Eclipse.html'>Deploying</a>
+</li>
+<li>
+<a href='/tools/STS/remote-CF-Eclipse.html'>Remote Access</a>
+</li>
+</ul>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/gallery/box.html'>Box Integration</a>
+</li>
+<li class='js-subtopic'>
+<a href='/tools/deploying-apps.html'>Deploying Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Samples</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/samples/cool-apps.html'>Cool Apps</a>
+</li>
+</ul>
+</li>
+<li class='js-topic'>
+<h3>
+<a href='#'>Tutorial</a>
+</h3>
+<ul class='js-guides'>
+<li class='js-subtopic'>
+<a href='/frameworks/java/spring/spring-getting-started-with-STS.html'>Spring Tutorial</a>
+</li>
+<li class='js-subtopic'>
+<a href='#'>Ruby on Rails Tutorial</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<strong>
+<a href='/faq.html'>FAQ</a>
+</strong>
+Frequently asked questions.
+</p>
+<p>
+<strong>
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' target='_blank'>Forums</a>
+</strong>
+Join the conversation.
+</p>
+<p>
+<strong>
+<a href='http://webinars.cloudfoundry.com'>Webinars</a>
+</strong>
+Learn more.
+</p>
+</div>
+</div>
+<div class='span-11 last'>
+<h2>Spring Application Development with Cloud Foundry</h2>
+<p class='tags'>
+<strong>Tags:</strong>
+<span>
+<a href="/tags/spring" rel="tag">spring</a><a href="/tags/mongodb" rel="tag">mongodb</a><a href="/tags/redis" rel="tag">redis</a><a href="/tags/code-attached" rel="tag">code-attached</a>
+</span>
+</p>
+<p class='timestamp'>
+<strong>Last Updated:</strong>
+<span>
+2012-09-17
+</span>
+</p>
+<div id='social-share'></div>
+<p>This section provides practical information for Spring developers who are using Cloud Foundry to deploy their applications.  In particular, the section describes Spring programming and packaging topics that are specific to the Cloud Foundry environment, and what you need to do to use the provided services, such as MySQL and RabbitMQ.</p>
+
+<p>(If you’re interested in using Spring Insight to monitor your Java applications on Cloud Foundry, read <a href="/frameworks/java/spring/spring-insight.html">this</a>.)</p>
+
+<p>(If you are working Spring, Roo or Grails and would like to see some code samples, check out this useful link: <a href="https://github.com/SpringSource/cloudfoundry-samples/wiki">https://github.com/SpringSource/cloudfoundry-samples/wiki</a> )</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>It is assumed that you have already installed either VMC, SpringSource STS, or Eclipse and that you have used one of these tools to deploy a simple HelloWorld application to Cloud Foundry, either to your local Micro version or to the service hosted at cloudfoundry.com.  It is also assumed that you are already a proficient Spring application developer.  For additional information, see:</p>
+
+<ul>
+<li><a href="/tools/vmc/installing-vmc.html">Installing the Command-Line Utility (VMC)</a></li>
+  <li><a href="/tools/STS/configuring-STS.html">Installing the Cloud Foundry Integration Extension for SpringSource Tool Suite (STS) and Eclipse</a></li>
+  <li><a href="http://www.springsource.org/get-started">Getting Started With Spring</a></li>
+</ul><h2 id="subtopics">Subtopics</h2>
+
+<ul>
+<li><a href="#programming-and-packaging-spring-applications">Programming and Packaging Spring Applications</a></li>
+  <li><a href="#using-cloud-foundry-services-in-spring-applications">Using Cloud Foundry Services In Spring Applications</a></li>
+  <li><a href="#rabbitmq-and-spring-additional-programming-information">RabbitMQ And Spring: Additional Programming Information</a></li>
+  <li><a href="#using-spring-profiles-to-conditionalize-cloud-foundry-configuration">Using Spring Profiles to Conditionalize Cloud Foundry Configuration</a></li>
+  <li><a href="#sending-email-from-spring-applications-deployed-to-cloud-foundry">Sending Email From Spring Applications Deployed to Cloud Foundry</a></li>
+  <li><a href="#accessing-cloud-foundry-properties">Accessing Cloud Foundry Properties</a></li>
+</ul><h2 id="programming-and-packaging-spring-applications">Programming and Packaging Spring Applications</h2>
+
+<p>In general, you do not have to do anything “special” when programming or packaging Spring applications that you want to deploy to Cloud Foundry.  In other words, if your Spring application runs on tc Server or Apache Tomcat, then it will also run on Cloud Foundry without any changes.</p>
+
+<p>It is usually best to package your Spring application in a <code>*.war</code> file so that <code>vmc push</code> will automatically detect that it is a Spring application, but you can also deploy it as an exploded directory if you want.</p>
+
+<p>There are, however, a few things about the Cloud Foundry environment that you should be aware of that might affect how your deployed application runs:</p>
+
+<ul>
+<li>
+    <p>Local disk storage is ephemeral.  In other words, local disk storage is not guaranteed to persist for the entire life of the application.  This is because Cloud Foundry creates a new virtual disk every time you restart your application.  Additionally, Cloud Foundry restarts all applications after it updates its own environment.  This means that, although your application is <em>able</em> to write local files while it is running, the files will disappear after the application restarts.   If the files your application is writing are temporary, then this should not be a problem.  However, if your application needs the data in the files to persist, then you must use one of the data services to manage the data.  In this scenario, MongoDB is a good choice because it is a document-oriented database.</p>
+  </li>
+  <li>
+    <p>Cloud Foundry uses Apache Tomcat as its application server, and it runs your application within the <code>root</code> context.   This is different from normal Apache Tomcat in which the context path is determined by the name of the <code>*.war</code> file in which the application is packaged.</p>
+  </li>
+  <li>
+    <p>HTTP sessions are not replicated, but HTTP traffic is sticky.  This means that if a your application crashes or restarts, the HTTP sessions are lost.</p>
+  </li>
+  <li>
+    <p>External users can access your application only via the URL provided by the <code>vmc push</code> command (or equivalent STS command).  Although your application might be able to internally listen to other ports (such as the JMX port for the MBean server), external users of your application will not be able to listen on these ports.</p>
+  </li>
+</ul><h2 id="using-cloud-foundry-services-in-spring-applications">Using Cloud Foundry Services In Spring Applications</h2>
+
+<p>If your Spring application requires services (such as a database or RabbitMQ), you might be able to deploy your application to Cloud Foundry <em>without changing a single line of code</em>.  In this case, Cloud Foundry automatically re-configures the relevant bean definitions to bind them to cloud services.  See <a href="#determining-whether-your-application-can-be-auto-configured">Determining Whether Your Application Can Be Auto-Configured</a> for details.</p>
+
+<p>If your Spring application cannot take advantage of Cloud Foundry’s auto-reconfiguration feature, or you want more control over the configuration, the additional steps you must take are very simple and easy.  See <a href="#explicitly-configuring-your-application-to-use-cloud-foundry-services">Explicitly Configuring Your Application to Use Cloud Foundry Services</a>.</p>
+
+<h2 id="determining-whether-your-application-can-be-auto-configured">Determining Whether Your Application Can Be Auto-Configured</h2>
+
+<p>You will likely be able to deploy many of your existing Spring applications to Cloud Foundry without changing a single line of code, even in the case that your application requires a service such as a relational database or RabbitMQ. This is because Cloud Foundry automatically detects the type of service your application needs, and if its configuration falls within a small <a href="#limitations-of-auto-reconfiguration">set of limitations</a>, Cloud Foundry will automatically reconfigure it so that it binds to service instances that Cloud Foundry creates and maintains itself.</p>
+
+<p>With auto-reconfiguration, Cloud Foundry creates the database or connection factory itself, using its own values for properties such as host, port, username and so on.  For example, if you have a single <code>javax.sql.DataSource</code> bean in your application context that Cloud Foundry reconfigures and binds to its own database service, Cloud Foundry doesn’t use the username and password and driver URL you originally specified.  Rather, it uses its own internal values.  This is transparent to the application, which really only cares about having a relational database to which it can write data but doesn’t really care what the specific properties are that created the database.</p>
+
+<p>The following sections describe, for each supported service, the type of bean that Cloud Foundry detects if auto-configuration occurs.</p>
+
+<h2 id="relational-database-mysql-and-vfabric-postgres">Relational Database (MySQL and vFabric Postgres)</h2>
+
+<p>Auto-reconfiguration occurs if Cloud Foundry detects a <code>javax.sql.DataSource</code> bean.   The following snippet of a Spring application context file shows an example of defining this type of bean which Cloud Foundry will in turn detect and potentially auto-reconfigure:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"org.apache.commons.dbcp.BasicDataSource"</span> <span class="na">destroy-method=</span><span class="s">"close"</span> <span class="na">id=</span><span class="s">"dataSource"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"driverClassName"</span> <span class="na">value=</span><span class="s">"org.h2.Driver"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"url"</span> <span class="na">value=</span><span class="s">"jdbc:h2:mem:"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"username"</span> <span class="na">value=</span><span class="s">"sa"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">""</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span></code></pre>
+
+<p>The relational database that Cloud Foundry actually uses depends on the service instance you explicitly bind to your application when you deploy it: MySQL or vFabric Postgres.  Cloud Foundry creates either a commons DBCP or Tomcat datasource.</p>
+
+<p>Cloud Foundry will internally generate values for the following properties:  driverClassName, url, username, password, validationQuery.</p>
+
+<h2 id="mongodb">MongoDB</h2>
+
+<p>You must be using <a href="http://www.springsource.org/spring-data/mongodb">Spring Data MongoDB</a> 1.0 M4 or later for auto-reconfiguration to work.</p>
+
+<p>Auto-reconfiguration occurs if Cloud Foundry detects a <code>org.springframework.data.document.mongodb.MongoDbFactory</code> bean.   The following snippet of a Spring application context file shows an example of defining this type of bean which Cloud Foundry will in turn detect and potentially auto-reconfigure:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;mongo:db-factory</span>
+    <span class="na">id=</span><span class="s">"mongoDbFactory"</span>
+    <span class="na">dbname=</span><span class="s">"pwdtest"</span>
+    <span class="na">host=</span><span class="s">"127.0.0.1"</span>
+    <span class="na">port=</span><span class="s">"1234"</span>
+    <span class="na">username=</span><span class="s">"test_user"</span>
+    <span class="na">password=</span><span class="s">"test_pass"</span>  <span class="nt">/&gt;</span></code></pre>
+
+<p>Cloud Foundry will create a <code>SimpleMOngoDbFactory</code> with its own values for the following properties:  host, port, username, password, dbname.</p>
+
+<h2 id="redis">Redis</h2>
+
+<p>You must be using <a href="http://www.springsource.org/spring-data/redis">Spring Data Redis</a> 1.0 M4 or later for auto-reconfiguration to work.</p>
+
+<p>Auto-reconfiguration occurs if Cloud Foundry detects a <code>org.springframework.data.redis.connection.RedisConnectionFactory</code> bean.   The following snippet of a Spring application context file shows an example of defining this type of bean which Cloud Foundry will in turn detect and potentially auto-reconfigure:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"redis"</span>
+      <span class="na">class=</span><span class="s">"org.springframework.data.redis.connection.jedis.JedisConnectionFactory"</span>
+      <span class="na">p:hostName=</span><span class="s">"localhost"</span> <span class="na">p:port=</span><span class="s">"6379"</span>  <span class="nt">/&gt;</span></code></pre>
+
+<p>Cloud Foundry will create a <code>JedisConnectionFactory</code> with its own values for the following properties:  host, port, password.   This means that you must package the Jedis JAR in your application.  Cloud Foundry does not currently support the JRedis and RJC implementations.</p>
+
+<h2 id="rabbitmq">RabbitMQ</h2>
+
+<p>You must be using <a href="http://www.springsource.org/spring-amqp">Spring AMQP</a> 1.0 or later for auto-reconfiguration to work.  Spring AMQP provides publishing, multi-threaded consumer generation, and message converters.  It also facilitates management of AMQP resources while promoting dependency injection and declarative configuration.</p>
+
+<p>Auto-reconfiguration occurs if Cloud Foundry detects a <code>org.springframework.amqp.rabbit.connection.ConnectionFactory</code> bean.   The following snippet of a Spring application context file shows an example of defining this type of bean which Cloud Foundry will in turn detect and potentially auto-reconfigure:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;rabbit:connection-factory</span>
+    <span class="na">id=</span><span class="s">"rabbitConnectionFactory"</span>
+    <span class="na">host=</span><span class="s">"localhost"</span>
+    <span class="na">password=</span><span class="s">"testpwd"</span>
+    <span class="na">port=</span><span class="s">"1238"</span>
+    <span class="na">username=</span><span class="s">"testuser"</span>
+    <span class="na">virtual-host=</span><span class="s">"virthost"</span> <span class="nt">/&gt;</span></code></pre>
+
+<p>Cloud Foundry will create a <code>org.springframework.amqp.rabbit.connection.CachingConnectionFactory</code> with its own values for the following properties:  host, virtual-host, port, username, password.</p>
+
+<h2 id="limitations-of-auto-reconfiguration">Limitations of Auto-Reconfiguration</h2>
+
+<p>Cloud Foundry auto-reconfigures applications only if the following items are true for your application:</p>
+
+<ul>
+<li>You bind only <em>one</em> service instance of a given service type to your application.  In this context, MySQL and vFabric Postgres are considered the same service type (relational database), so if you have bound both a MySQL and a vFabric Postgres service to your application, auto-reconfiguration will <em>not</em> occur.</li>
+  <li>You include only <em>one</em> bean of a matching type in your Spring application context file.  For example, you can have only one bean of type <code>javax.sql.DataSource</code>.</li>
+</ul><p>Also note that if auto-reconfiguration occurs, but you have customized the configuration of the service (such as the pool size or connection properties), Cloud Foundry ignores the customizations.</p>
+
+<h2 id="opting-out-of-auto-reconfiguration">Opting Out of Auto-Reconfiguration</h2>
+
+<p>Sometimes you may not want Cloud Foundry to auto-reconfigure your Spring application in the ways described in this section.  There are two ways to opt out:</p>
+
+<ul>
+<li>When you deploy your application using VMC or STS, specify that the framework is <code>JavaWeb</code> instead of <code>Spring</code>.  Note that in this case your application will not be able to take advantage of the Spring Profiles feature.</li>
+  <li>Use the <code>&lt;cloud:&gt;</code> namespace elements in your Spring application context file to explicitly create a bean that represents a service.  This makes auto-reconfiguration unnecessary.  See <a href="#explicitly-configuring-your-application-to-use-cloud-foundry-services">Explicitly Configuring Your Application to Use Cloud Foundry Services</a>.</li>
+</ul><h2 id="explicitly-configuring-your-application-to-use-cloud-foundry-services">Explicitly Configuring Your Application to Use Cloud Foundry Services</h2>
+
+<p>This section describes the simple configuration steps you must perform in your Spring applications so they can use the Cloud Foundry services.  See <a href="/frameworks.html">Configuring Applications to Use Cloud Foundry</a> for the complete list of supported Cloud Foundry services.</p>
+
+<p>The easiest way to use Cloud Foundry services in your Spring applications is to declare the <code>&lt;cloud:&gt;</code> namespace, point it to the Cloud Foundry Schema, then use the service-specific elements defined in the <code>&lt;cloud&gt;</code> namespace.  For example, with just a single line of XML in your application context file you can create a JDBC data source or a RabbitMQ connection factory that you can use in your specific bean definitions.  You can configure multiple data sources or connection factories if your application requires it.   You can also further configure these cloud services if you want, although it is completely optional because Cloud Foundry uses common-place configuration values to create typical service instances that are adequate for most uses.  In sum, using the <code>&lt;cloud:&gt;</code> namespace provides you with as much control as you want over the number and type of Cloud Foundry services that your application uses.</p>
+
+<p>The basic steps to update your Spring application to use any of the Cloud Foundry services are as follows:</p>
+
+<ul>
+<li>Update your application build process to include a dependency on the <code>org.cloudfoundry.cloudfoundry-runtime</code> artifact.  For example, if you use Maven to build your application, the following <code>pom.xml</code> snippet shows how to add this dependency:</li>
+</ul><pre><code class="language-xml"><span class="nt">&lt;dependencies&gt;</span>
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.cloudfoundry<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>cloudfoundry-runtime<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.8.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+
+    <span class="c">&lt;!-- additional dependency declarations --&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span></code></pre>
+
+<ul>
+<li>Update your application build process to include the Spring Framework Milestone repository.  The following <code>pom.xml</code> snippet shows how to do this in Maven:</li>
+</ul><pre><code class="language-xml"><span class="nt">&lt;repositories&gt;</span>
+    <span class="nt">&lt;repository&gt;</span>
+          <span class="nt">&lt;id&gt;</span>org.springframework.maven.milestone<span class="nt">&lt;/id&gt;</span>
+           <span class="nt">&lt;name&gt;</span>Spring Maven Milestone Repository<span class="nt">&lt;/name&gt;</span>
+           <span class="nt">&lt;url&gt;</span>http://maven.springframework.org/milestone<span class="nt">&lt;/url&gt;</span>
+           <span class="nt">&lt;snapshots&gt;</span>
+                   <span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+           <span class="nt">&lt;/snapshots&gt;</span>
+    <span class="nt">&lt;/repository&gt;</span>
+
+    <span class="c">&lt;!-- additional repository declarations --&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span></code></pre>
+
+<ul>
+<li>In your Spring application, update all application context files that will include the Cloud Foundry service declarations, such as a data source, by adding the <code>&lt;cloud:&gt;</code> namespace declaration and the location of the Cloud Foundry services Schema, as shown in the following snippet:</li>
+</ul><pre><code class="language-xml"><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xmlns:context=</span><span class="s">"http://www.springframework.org/schema/context"</span>
+    <span class="na">xmlns:cloud=</span><span class="s">"http://schema.cloudfoundry.org/spring"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/beans</span>
+        <span class="err">http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span>
+        <span class="err">http://www.springframework.org/schema/context</span>
+        <span class="err">http://www.springframework.org/schema/context/spring-context-3.1.xsd</span>
+        <span class="err">http://schema.cloudfoundry.org/spring</span>
+        <span class="err">http://schema.cloudfoundry.org/spring/cloudfoundry-spring.xsd</span>
+        <span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- bean declarations --&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<ul>
+<li>
+    <p>You can now specify the Cloud Foundry services in the Spring application context file by using the <code>&lt;cloud:&gt;</code> namespace along with the name of specific elements, such as <code>data-source</code>.  Cloud Foundry provides elements for each of the supported services:  database (MySQL and vFabric Postgres), Redis, MongoDB, and RabbitMQ.</p>
+
+    <p>The following example shows a simple data source configuration that will be injected into a JdbcTemplate using the <code>&lt;cloud:data-source&gt;</code> element.</p>
+  </li>
+</ul><pre><code class="language-xml"><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+    <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xmlns:context=</span><span class="s">"http://www.springframework.org/schema/context"</span>
+    <span class="na">xmlns:cloud=</span><span class="s">"http://schema.cloudfoundry.org/spring"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/beans</span>
+<span class="s">        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span>
+<span class="s">        http://www.springframework.org/schema/context</span>
+<span class="s">        http://www.springframework.org/schema/context/spring-context-3.1.xsd</span>
+<span class="s">        http://schema.cloudfoundry.org/spring</span>
+<span class="s">        http://schema.cloudfoundry.org/spring/cloudfoundry-spring.xsd</span>
+<span class="s">        &gt;</span>
+
+<span class="s">    &lt;cloud:data-source id="</span><span class="err">dataSource"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"jdbcTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.jdbc.core.JdbcTemplate"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+
+        <span class="c">&lt;!-- additional beans in your application --&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<p>When you later deploy the application using VMC or STS, you bind a specific data service (such as MySQL or vFabric Postgres) to it and Cloud Foundry creates an instance of the service.  Note that in the example above, you did not specify typical data source properties such as <code>driverClassName</code> or <code>url</code> or <code>username</code> - this is because Cloud Foundry automatically takes care of those properties for you.</p>
+
+<p>For complete information about all the <code>&lt;cloud:&gt;</code> elements you can use in your Spring application context file to access Cloud Foundry services, see the following sections:</p>
+
+<ul>
+<li><a href="#clouddata-source">&lt;cloud:data-source&gt;: Configure a JDBC Data Source for Either MySQL or vFabric Postgres Databases</a></li>
+  <li><a href="#cloudmongo-db-factory">&lt;cloud:mongo-db-factory&gt;: Configure a MongoDB Connection Factory</a></li>
+  <li><a href="#cloudredis-connection-factory">&lt;cloud:redis-connection-factory&gt;: Configure a Redis Connection Factory</a></li>
+  <li><a href="#cloudrabbit-connection-factory">&lt;cloud:rabbit-connection-factory&gt;: Configure a RabbitMQ Connection Factory</a></li>
+  <li><a href="#cloudservice-scan">&lt;cloud:service-scan&gt; Injecting Services Into @Autowired Beans </a></li>
+  <li>
+    <p><a href="#cloudproperties">&lt;cloud:properties&gt; Get Cloud Foundry Service Information</a></p>
+  </li>
+  <li>After you have finished specifying all the Cloud Foundry services you are going to use in your application, you use the standard Cloud Foundry client commands (VMC, SpringSource Tool Suite, or the Eclipse plugin) to create instances of these services, bind them to your applications, then deploy your applications to the hosted Cloud Foundry (cloudfoundry.com) or to your local Micro Cloud Foundry instance.  See <a href="/tools/deploying-apps.html">Deploying Applications</a> for details on how to use these tools.</li>
+</ul><h2 id="clouddata-source">&lt;cloud:data-source&gt;</h2>
+
+<p>The <code>&lt;cloud:data-source&gt;</code> element provides an easy way for you to configure a JDBC data source for your Spring application.    Later, when you actually deploy the application, you bind a particular database service instance to it, such as MySQL or vFabric Postgres.</p>
+
+<p>The following example shows a simple way to configure a JDBC data source that will be injected into a <code>org.springframework.jdbc.core.JdbcTemplate</code> bean:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;cloud:data-source</span> <span class="na">id=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"jdbcTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.jdbc.core.JdbcTemplate"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span></code></pre>
+
+<p>In the preceding example, note that no specific information about the datasource is supplied, such as the JDBC driver classname, the specific URL to access the database, and the database users.  Instead, Cloud Foundry will take care of all of that at runtime, using appropriate information from the specific type of database service instance you bind to your application.</p>
+
+<p><strong>Attributes</strong></p>
+
+<p>The following table lists the attributes of the <code>&lt;cloud:data-source&gt;</code> element.</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+ </tr>
+<tr>
+<td>id</td>
+   <td>The ID of this data source.  The JdbcTemplate bean uses this ID when it references the data source. <br>Default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+<tr>
+<td>service-name</td>
+   <td>The name of the data source service. <br>You specify this attribute only if you are binding multiple database services to your application and you want to specify which particular service instance binds to a particular Spring bean.  The default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+</table><p><strong>Advanced Data Source Configuration</strong></p>
+
+<p>The section above showed how to configure a very simple JDBC data source; Cloud Foundry uses the most common configuration options when it actually creates the data source at runtime.  You can, however, specify some of these configuration options using the following two child elements of <code>&lt;cloud:data-source&gt;</code>:  <code>&lt;cloud:connection&gt;</code> and <code>&lt;cloud:pool&gt;</code>.</p>
+
+<p>The <code>&lt;cloud:connection&gt;</code> child element takes a single String attribute (<code>properties</code>) that you use to specify connection properties you want to send to the JDBC driver when establishing new database connections.  The format of the string must be semi-colon separated name/value pairs  (<code>[propertyName=property;]</code>).</p>
+
+<p>The <code>&lt;cloud:pool&gt;</code> child element takes the following two attributes:</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+   <th>Default</th>
+ </tr>
+<tr>
+<td>pool-size</td>
+   <td>Specifies the size of the connection pool.  Set the value to either the maximum number of connections in the pool, or a range of the minimum and maximum number of connections separated by a dash.</td>
+   <td>int</td>
+   <td>Default minimum is 0.  Default maximum is 8. These are the same defaults as the Apache Commons Pool.</td>
+ </tr>
+<tr>
+<td>max-wait-time</td>
+   <td>In the event that there are no available connections, this attribute specifies the maximum number of milliseconds that the connection pool waits for a connection to be returned before throwing an exception. Specify `-1` to indicate that the connection pool should wait forever. </td>
+   <td>int</td>
+   <td>Default value is `-1` (forever).</td>
+ </tr>
+</table><p>The following example shows how to use these advanced data source configuration options:</p>
+
+<pre><code class="language-xml">        <span class="nt">&lt;cloud:data-source</span> <span class="na">id=</span><span class="s">"mydatasource"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;cloud:connection</span> <span class="na">properties=</span><span class="s">"charset=utf-8"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;cloud:pool</span> <span class="na">pool-size=</span><span class="s">"5-10"</span> <span class="na">max-wait-time=</span><span class="s">"2000"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/cloud:data-source&gt;</span></code></pre>
+
+<p>In the preceding example, the JDBC driver is passed the property that specifies that it should use the UTF-8 character set.  The minimum and maximum number of connections in the pool at any given time is 5 and 10, respectively.  The maximum amount of time that the connection pool waits for a returned connection if there are none available is 2000 milliseconds (2 seconds), after which the JDBC connection pool throws an exception.</p>
+
+<h2 id="cloudmongo-db-factory-">&lt;cloud:mongo-db-factory &gt;</h2>
+
+<p>The <code>&lt;cloud:mongo-db-factory&gt;</code> provides a simple way for you to configure a MongoDB connection factory for your Spring application.</p>
+
+<p>The following example shows a MongoDbFactory configuration that will be injected into a <code>org.springframework.data.mongodb.core.MongoTemplate</code> object:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;cloud:mongo-db-factory</span> <span class="na">id=</span><span class="s">"mongoDbFactory"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"mongoTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.data.mongodb.core.MongoTemplate"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;constructor-arg</span> <span class="na">ref=</span><span class="s">"mongoDbFactory"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/bean&gt;</span></code></pre>
+
+<p><strong>Attributes</strong></p>
+
+<p>The following table lists the attributes of the <code>&lt;cloud:mongo-db-factory&gt;</code> element.</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+ </tr>
+<tr>
+<td>id</td>
+   <td>The ID of this MongoDB connection factory.  The MongoTemplate bean uses this ID when it references the connection factory. <br>Default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+<tr>
+<td>service-name</td>
+   <td>The name of the MongoDB service. <br>You specify this attribute only if you are binding multiple MongoDB services to your application and you want to specify which particular service instance binds to a particular Spring bean.  The default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+<tr>
+<td>write-concern</td>
+   <td>Controls the behavior of writes to the data store.  The values of this attribute correspond to the values of the `com.mongodb.WriteConcern` class.
+   <p>If you do not specify this attribute, then no `WriteConcern` is set for the database connections and all writes default to NORMAL.  </p>
+   <p>The possible values for this attribute are as follows:</p>
+	<ul>
+<li>
+<b>NONE</b>: No exceptions are raised, even for network issues.</li>
+	  <li>
+<b>NORMAL</b>: Exceptions are raised for network issues, but not server errors.</li>
+	  <li>
+<b>SAFE</b>: MongoDB service waits on a server before performing a write operation.  Exceptions are raised for both network and server errors.</li>
+	  <li>
+<b>FSYNC_SAVE</b>: MongoDB service waits for the server to flush the data to disk before performing a write operation.  Exceptions are raised for both network and server errors.</li>
+	</ul>
+</td>
+   <td>String</td>
+ </tr>
+</table><h2 id="advanced-mongodb-configuration">Advanced MongoDB Configuration</h2>
+
+<p>The preceding section shows how to configure a simple MongoDB connection factory using default values for the options.   This is adequate for many environments.  However, you can further configure the connection factory by specifying the optional <code>&lt;cloud:mongo-options&gt;</code> child element of <code>&lt;cloud:mongo-db-factory&gt;</code>.</p>
+
+<p>The <code>&lt;cloud:mongo-options&gt;</code> child element takes the following two attributes:</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+   <th>Default</th>
+ </tr>
+<tr>
+<td>connections-per-host</td>
+   <td>Specifies the maximum number of connections allowed per host for the MongoDB instance. Those connections will be kept in a pool when idle. Once the pool is exhausted, any operation requiring a connection will block while waiting for an available connection.</td>
+   <td>int</td>
+   <td>10</td>
+ </tr>
+<tr>
+<td>max-wait-time</td>
+   <td>Specifies the maximum wait time (in milliseconds) that a thread waits for a connection to become available.</td>
+   <td>int</td>
+   <td>120,000 (2 minutes)</td>
+ </tr>
+</table><p>The following example shows how to use the advanced MongoDB options:</p>
+
+<pre><code class="language-xml">    <span class="nt">&lt;cloud:mongo-db-factory</span> <span class="na">id=</span><span class="s">"mongoDbFactory"</span> <span class="na">write-concern=</span><span class="s">"FSYNC_SAFE"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;cloud:mongo-options</span> <span class="na">connections-per-host=</span><span class="s">"12"</span> <span class="na">max-wait-time=</span><span class="s">"2000"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/cloud:mongo-db-factory&gt;</span></code></pre>
+
+<p>In the preceding example, the maximum number of connections is set to 12 and the maximum amount of time that a thread waits for a connection is 1 second.  The WriteConcern is also specified to be the safest possible (<code>FSYNC_SAFE</code>).</p>
+
+<h2 id="cloudredis-connection-factory-">&lt;cloud:redis-connection-factory &gt;</h2>
+
+<p>The <code>&lt;cloud:redis-connection-factory&gt;</code> provides a simple way for you to configure a Redis connection factory for your Spring application.</p>
+
+<p>The following example shows a <code>RedisConnectionFactory</code> configuration that will be injected into a <code>org.springframework.data.redis.core.StringRedisTemplate</code> object:</p>
+
+<pre><code class="language-xml">    <span class="nt">&lt;cloud:redis-connection-factory</span> <span class="na">id=</span><span class="s">"redisConnectionFactory"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"redisTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.data.redis.core.StringRedisTemplate"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"connection-factory"</span> <span class="na">ref=</span><span class="s">"redisConnectionFactory"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span></code></pre>
+
+<p><strong>Attributes</strong></p>
+
+<p>The following table lists the attributes of the <code>&lt;cloud:redis-connection-factory&gt;</code> element.</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+ </tr>
+<tr>
+<td>id</td>
+   <td>The ID of this Redis connection factory.  The RedisTemplate bean uses this ID when it references the connection factory. <br>Default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+<tr>
+<td>service-name</td>
+   <td>The name of the Redis service. <br>You specify this attribute only if you are binding multiple Redis services to your application and you want to specify which particular service instance binds to a particular Spring bean.  The default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+</table><p><strong>Advanced Redis Configuration</strong></p>
+
+<p>The preceding section shows how to configure a very simple Redis connection factory; Cloud Foundry uses the most common configuration options when it actually creates the factory at runtime.  You can, however, change some of these configuration options using the<code>&lt;cloud:pool&gt;</code> child element of <code>&lt;cloud:redis-connection-factory&gt;</code>.</p>
+
+<p>The <code>&lt;cloud:pool&gt;</code> child element takes the following two attributes:</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+   <th>Default</th>
+ </tr>
+<tr>
+<td>pool-size</td>
+   <td>Specifies the size of the connection pool.  Set the value to either the maximum number of connections in the pool, or a range of the minimum and maximum number of connections separated by a dash.</td>
+   <td>int</td>
+   <td>Default minimum is 0.  Default maximum is 8. These are the same defaults as the Apache Commons Pool.</td>
+ </tr>
+<tr>
+<td>max-wait-time</td>
+   <td>In the event that there are no available connections, this attribute specifies the maximum number of milliseconds that the connection pool waits for a connection to be returned before throwing an exception. Specify `-1` to indicate that the connection pool should wait forever. </td>
+   <td>int</td>
+   <td>Default value is `-1` (forever).</td>
+ </tr>
+</table><p>The following example shows how to use these advanced Redis configuration options:</p>
+
+<pre><code class="language-xml">    <span class="nt">&lt;cloud:redis-connection-factory</span> <span class="na">id=</span><span class="s">"myRedisConnectionFactory"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;cloud:pool</span> <span class="na">pool-size=</span><span class="s">"5-10"</span> <span class="na">max-wait-time=</span><span class="s">"2000"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/cloud:redis-connection-factory&gt;</span></code></pre>
+
+<p>In the preceding example, the minimum and maximum number of connections in the pool at any given time is 5 and 10, respectively.  The maximum amount of time that the connection pool waits for a returned connection if there are none available is 2000 milliseconds (2 seconds), after which the Redis connection pool throws an exception.</p>
+
+<h2 id="cloudrabbit-connection-factory-">&lt;cloud:rabbit-connection-factory &gt;</h2>
+
+<p>The <code>&lt;cloud:rabbit-connection-factory&gt;</code> provides a simple way for you to configure a RabbitMQ connection factory for your Spring application.</p>
+
+<p>The following complete example of a Spring application contenxt file shows a <code>RabbitConnectionFactory</code> configuration that will be injected into a <code>rabbitTemplate</code> object.  The example also uses the <code>&lt;rabbit:&gt;</code> namespace to perform RabbitMQ-specific configurations, as explained after the example:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+       <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+       <span class="na">xmlns:mvc=</span><span class="s">"http://www.springframework.org/schema/mvc"</span>
+       <span class="na">xmlns:context=</span><span class="s">"http://www.springframework.org/schema/context"</span>
+       <span class="na">xmlns:rabbit=</span><span class="s">"http://www.springframework.org/schema/rabbit"</span>
+       <span class="na">xmlns:cloud=</span><span class="s">"http://schema.cloudfoundry.org/spring"</span>
+       <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/mvc   http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd</span>
+<span class="s">           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span>
+<span class="s">           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd</span>
+<span class="s">           http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd</span>
+<span class="s">           http://schema.cloudfoundry.org/spring http://schema.cloudfoundry.org/spring/cloudfoundry-spring.xsd"</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- Obtain a connection to the RabbitMQ via cloudfoundry-runtime: --&gt;</span>
+    <span class="nt">&lt;cloud:rabbit-connection-factory</span> <span class="na">id=</span><span class="s">"rabbitConnectionFactory"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Set up the AmqpTemplate/RabbitTemplate: --&gt;</span>
+    <span class="nt">&lt;rabbit:template</span> <span class="na">id=</span><span class="s">"rabbitTemplate"</span>
+        <span class="na">connection-factory=</span><span class="s">"rabbitConnectionFactory"</span> <span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Request that queues, exchanges and bindings be automatically declared on the broker: --&gt;</span>
+    <span class="nt">&lt;rabbit:admin</span> <span class="na">connection-factory=</span><span class="s">"rabbitConnectionFactory"</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Declare the "messages" queue: --&gt;</span>
+    <span class="nt">&lt;rabbit:queue</span> <span class="na">name=</span><span class="s">"messages"</span> <span class="na">durable=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- additional beans in your application --&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<p>In the preceding example, note the definition and location of the <code>&lt;rabbit:&gt;</code> namespace at the top of the XML file.  This namespace is then used to configure RabbitTemplate and RabbitAdmin objects as the main entry points to Spring AMQP and to declare a queue called <code>messages</code> within the RabbitMQ broker.</p>
+
+<p>See <a href="#rabbitmq-and-spring-additional-programming-information">RabbitMQ And Spring: Additional Programming Information</a> for additional information about using RabbitMQ in your Spring applications.</p>
+
+<p><strong>Attributes</strong></p>
+
+<p>The following table lists the attributes of the <code>&lt;cloud:rabbit-connection-factory&gt;</code> element.</p>
+
+<table class="std">
+<tr>
+<th>Attribute</th>
+   <th>Description</th>
+   <th>Type</th>
+ </tr>
+<tr>
+<td>id</td>
+   <td>The ID of this RabbitMQ connection factory.  The RabbitTempalte bean uses this ID when it references the connection factory. <br>Default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+<tr>
+<td>service-name</td>
+   <td>The name of the RabbitMQ service. <br>You specify this attribute only if you are binding multiple RabbitMQ services to your application and you want to specify which particular service instance binds to a particular Spring bean.  The default value is the name of the bound service instance.</td>
+   <td>String</td>
+ </tr>
+</table><p><strong>Advanced RabbitMQ Configuration</strong></p>
+
+<p>The preceding section shows how to configure a very simple RabbitMQ connection factory; Cloud Foundry uses the most common configuration options when it actually creates the factory at runtime.  You can, however, change some of these configuration options using the<code>&lt;cloud:rabbit-options&gt;</code> child element of <code>&lt;cloud:rabbit-connection-factory&gt;</code>.</p>
+
+<p>The <code>&lt;cloud:rabbit-options&gt;</code> child element defines one attribute called <code>channel-cache-size</code> which you can set to specify the size of the channel cache size.  The default value is 1.</p>
+
+<p>The following example shows how to use these advanced RabbitMQ configuration options:</p>
+
+<pre><code class="language-xml">        <span class="nt">&lt;cloud:rabbit-connection-factory</span> <span class="na">id=</span><span class="s">"rabbitConnectionFactory"</span> <span class="nt">&gt;</span>
+            <span class="nt">&lt;cloud:rabbit-options</span> <span class="na">channel-cache-size=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/cloud:rabbit-connection-factory&gt;</span></code></pre>
+
+<p>In the preceding example, the channel cache size of the RabbitMQ connection factory is set to 10.</p>
+
+<h2 id="cloudservice-scan">&lt;cloud:service-scan&gt;</h2>
+
+<p>The <code>&lt;cloud:service-scan&gt;</code> element scans all services bound to the application and creates a Spring bean of an appropriate type for each one that has been annoted with the <code>@org.springframework.beans.factory.annotation.Autowired</code> annotation.  The <code>&lt;cloud:service-scan&gt;</code> element acts as a cloud equivalent of <code>&lt;context:component-scan&gt;</code> in core Spring, which scans the CLASSPATH for beans with certain annotations and creates a bean for each.</p>
+
+<p>The <code>&lt;cloud:service-scan&gt;</code> is especially useful during the initial phases of application development, because you can get immediate access to service beans without explicitly adding a <code>&lt;cloud:&gt;</code> element to your Spring application context file for each new service that you bind.</p>
+
+<p>The <code>&lt;cloud:service-scan&gt;</code> element has no attributes or child elements; for example:</p>
+
+<pre><code class="language-xml">         <span class="nt">&lt;cloud:service-scan</span> <span class="nt">/&gt;</span></code></pre>
+
+<p>In your Java code, you must annotate each dependency with <code>@Autowired</code> so that a bean of the corresponding service is automatically created.  For example:</p>
+
+<pre><code class="language-java">  <span class="kn">package</span> <span class="n">cf</span><span class="o">.</span><span class="na">examples</span><span class="o">;</span>
+
+  <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+
+  <span class="o">....</span>
+
+  <span class="nd">@Autowired</span> <span class="n">DataSource</span> <span class="n">dataSource</span><span class="o">;</span>
+  <span class="nd">@Autowired</span> <span class="n">ConnectionFactory</span> <span class="n">rabbitConnectionFactory</span><span class="o">;</span>
+  <span class="nd">@Autowired</span> <span class="n">RedisConnectionFactory</span> <span class="n">redisConnectionFactory</span><span class="o">;</span>
+  <span class="nd">@Autowired</span> <span class="n">MongoDbFactory</span> <span class="n">mongoDbFactory</span><span class="o">;</span>
+
+  <span class="o">...</span></code></pre>
+
+<p>Use of only the <code>@Autowired</code> annotation is adequate if you have bound only <em>one</em> service of each service type to your application.  If you bind more than one (for example, you bind two different MySQL service instances to the same application) then you must also use the <code>@Qualifier</code> annotation to match the Spring bean with the specific service instance.</p>
+
+<p>For example, assume you bound two MySQL services (named <code>inventory-db</code> and <code>pricing-db</code>) to your application; use the <code>@Qualifier</code> annotation as shown in the following example to specify which service instance applies to which Spring bean:</p>
+
+<pre><code class="language-java">  <span class="nd">@Autowired</span> <span class="nd">@Qualifier</span><span class="o">(</span><span class="s">"inventory-db"</span><span class="o">)</span> <span class="n">DataSource</span> <span class="n">inventoryDataSource</span><span class="o">;</span>
+  <span class="nd">@Autowired</span> <span class="nd">@Qualifier</span><span class="o">(</span><span class="s">"pricing-db"</span><span class="o">)</span> <span class="n">DataSource</span> <span class="n">pricingDataSource</span><span class="o">;</span></code></pre>
+
+<h2 id="cloudproperties">&lt;cloud:properties&gt;</h2>
+
+<p>The <code>&lt;cloud:properties&gt;</code> element exposes basic information about the application and its bound services as properties.  Your application can then consume these properties using the Spring property placeholder support.</p>
+
+<p>The <code>&lt;cloud:properties&gt;</code> element has just a single attribute (<code>id</code>) which specifies the name of the Properties bean.  Use this ID as a reference to <code>&lt;context:property-placeholder&gt;</code> which you can use to hold all the properties exposed by Cloud Foundry.  You can then use these properties in your other bean defintions.</p>
+
+<p>Note that if you are using Spring Framework 3.1 (or later), these properties are automatically available without having to include <code>&lt;cloud:properties&gt;</code> in your application context file.</p>
+
+<p>The following example shows how to use this element in your Spring application context file:</p>
+
+<pre><code class="language-xml">    <span class="nt">&lt;cloud:properties</span> <span class="na">id=</span><span class="s">"cloudProperties"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;context:property-placeholder</span> <span class="na">properties-ref=</span><span class="s">"cloudProperties"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">"com.mchange.v2.c3p0.ComboPooledDataSource"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"user"</span>
+                  <span class="na">value=</span><span class="s">"${cloud.services.mysql.connection.username}"</span> <span class="nt">/&gt;</span>
+    ...
+    <span class="nt">&lt;/bean&gt;</span></code></pre>
+
+<p>In the preceding example, <code>cloud.services.mysql.connection.username</code> is one of the properties exposed by Cloud Foundry.</p>
+
+<p>For a complete list of properties exposed by Cloud Foundry, as well as a more detailed example, see <a href="#accessing-cloud-foundry-properties">Accessing Cloud Foundry Properties</a>.</p>
+
+<h2 id="rabbitmq-and-spring-additional-programming-information">RabbitMQ And Spring: Additional Programming Information</h2>
+
+<p>This section provides additional information about using RabbitMQ in your Spring applications that you deploy to Cloud Foundry. This section is not intended to be a complete tutorial on RabbitMQ and Spring; for that, see the following resources:</p>
+
+<ul>
+<li>
+<a href="http://www.rabbitmq.com/getstarted.html">RabbitMQ Tutorials</a>, cover the basics of creating messaging in your applications.</li>
+  <li>
+<a href="http://www.rabbitmq.com/download.html">Download</a>, <a href="http://www.rabbitmq.com/install.html">install</a> and <a href="http://www.rabbitmq.com/configure.html">configure</a> RabbitMQ</li>
+  <li><a href="http://static.springsource.org/spring-amqp/docs/1.0.x/reference/html/">Spring AMPQ reference documentation</a></li>
+</ul><p>The RabbitMQ service is accessed through the <a href="http://www.amqp.org/">AMQP protocol</a> (versions 0.8 and 0.9.1) and your application will need access to a AMQP client library in order to use the service. The Spring AMQP project enables AMQP applications to be built using Spring constructs.</p>
+
+<p>The following sample <code>pom.xml</code> file shows RabbitMQ dependencies and repositories in addition to the <code>cloudfoundry-runtime</code> dependency described above:</p>
+
+<pre><code class="language-xml">    <span class="nt">&lt;repositories&gt;</span>
+        <span class="nt">&lt;repository&gt;</span>
+              <span class="nt">&lt;id&gt;</span>org.springframework.maven.milestone<span class="nt">&lt;/id&gt;</span>
+               <span class="nt">&lt;name&gt;</span>Spring Maven Milestone Repository<span class="nt">&lt;/name&gt;</span>
+               <span class="nt">&lt;url&gt;</span>http://maven.springframework.org/milestone<span class="nt">&lt;/url&gt;</span>
+               <span class="nt">&lt;snapshots&gt;</span>
+                       <span class="nt">&lt;enabled&gt;</span>false<span class="nt">&lt;/enabled&gt;</span>
+               <span class="nt">&lt;/snapshots&gt;</span>
+        <span class="nt">&lt;/repository&gt;</span>
+    <span class="nt">&lt;/repositories&gt;</span>
+
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>cglib<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>cglib-nodep<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.springframework.amqp<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>spring-rabbit<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>1.0.0.RC2<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+
+    <span class="nt">&lt;dependency&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>org.cloudfoundry<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>cloudfoundry-runtime<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.7.1<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span></code></pre>
+
+<p>Then update your application controller/logic as follows:</p>
+
+<ul>
+<li>Include the messaging libraries:</li>
+</ul><pre><code class="language-java">   <span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+   <span class="kn">import</span> <span class="nn">org.springframework.amqp.core.AmqpTemplate</span><span class="o">;</span></code></pre>
+
+<ul>
+<li>Read and write messages as shown in the following Java code snippets:</li>
+</ul><pre><code class="language-java">   <span class="nd">@Controller</span>
+   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HomeController</span> <span class="o">{</span>
+       <span class="nd">@Autowired</span> <span class="n">AmqpTemplate</span> <span class="n">amqpTemplate</span><span class="o">;</span>
+
+       <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/"</span><span class="o">)</span>
+       <span class="kd">public</span> <span class="n">String</span> <span class="nf">home</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+           <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="k">new</span> <span class="n">Message</span><span class="o">());</span>
+           <span class="k">return</span> <span class="s">"WEB-INF/views/home.jsp"</span><span class="o">;</span>
+       <span class="o">}</span>
+
+       <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/publish"</span><span class="o">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+       <span class="kd">public</span> <span class="n">String</span> <span class="nf">publish</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">,</span> <span class="n">Message</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+           <span class="c1">// Send a message to the "messages" queue</span>
+           <span class="n">amqpTemplate</span><span class="o">.</span><span class="na">convertAndSend</span><span class="o">(</span><span class="s">"messages"</span><span class="o">,</span> <span class="n">message</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+           <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"published"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+           <span class="k">return</span> <span class="nf">home</span><span class="o">(</span><span class="n">model</span><span class="o">);</span>
+       <span class="o">}</span>
+
+       <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/get"</span><span class="o">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">POST</span><span class="o">)</span>
+       <span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">(</span><span class="n">Model</span> <span class="n">model</span><span class="o">)</span> <span class="o">{</span>
+           <span class="c1">// Receive a message from the "messages" queue</span>
+           <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span><span class="n">amqpTemplate</span><span class="o">.</span><span class="na">receiveAndConvert</span><span class="o">(</span><span class="s">"messages"</span><span class="o">);</span>
+           <span class="k">if</span> <span class="o">(</span><span class="n">message</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+               <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"got"</span><span class="o">,</span> <span class="n">message</span><span class="o">);</span>
+           <span class="k">else</span>
+               <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">"got_queue_empty"</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+
+           <span class="k">return</span> <span class="nf">home</span><span class="o">(</span><span class="n">model</span><span class="o">);</span>
+   <span class="o">}</span></code></pre>
+
+<h2 id="using-spring-profiles-to-conditionalize-cloud-foundry-configuration">Using Spring Profiles to Conditionalize Cloud Foundry Configuration</h2>
+
+<p>The preceding sections describe how to use the <code>&lt;cloud:&gt;</code> namespace to easily configure services (such as data sources and RabbitMQ connection factories) for Spring applications deployed to Cloud Foundry.   However, you might not always want to deploy your applications to Cloud Foundry; for example, you might sometimes want to use a local environment to test the application during iterative development.  In this case, it would be useful to <em>conditionalize</em> the application configuration so that only specific fragments are activated when a certain condition is true.   Setting up such conditionalized configuration makes your application portable to many different environments so that you do not have to manually change the configuration when you deploy it to, for example, your local environment and then to Cloud Foundry.   To enable this, use the Spring <em>profiles</em> feature, available in Spring Framework 3.1 or later.</p>
+
+<p>The basic idea is that you group the configuration for a specific environment using the <code>profile</code> attribute of a nested <code>&lt;beans&gt;</code> element in the appropriate Spring application context file.  You can create your own custom profiles, but the ones that are most relevant in the context of Cloud Foundry are <code>default</code> and <code>cloud</code>.</p>
+
+<p>When you deploy a Spring application to Cloud Foundry, Cloud Foundry automatically enables the <code>cloud</code> profile. This allows for a pre-defined, convenient location for Cloud Foundry-specific application configuration. You should then group all specific usages of the <code>&lt;cloud:&gt;</code> namespace within the <code>cloud</code> profile block to allow the application to run outside of Cloud Foundry environments.  You then use the <code>default</code> profile (or a custom profile) to group the non-Cloud Foundry configuration that will be used if you deploy your application to a non-Cloud Foundry environment.</p>
+
+<p>Here is an example of a Spring <code>MongoTemplate</code> being populated from two alternately configured connection factories. When running on Cloud Foundry (<code>cloud</code> profile), the connection factory is automatically configured. When not running on Cloud Foundry (<code>default</code> profile), the connection factory is manually configured with the connection settings to a running MongoDB instance.</p>
+
+<pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;beans</span>  <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+        <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xmlns:cloud=</span><span class="s">"http://schema.cloudfoundry.org/spring"</span>
+        <span class="na">xmlns:jdbc=</span><span class="s">"http://www.springframework.org/schema/jdbc"</span>
+        <span class="na">xmlns:util=</span><span class="s">"http://www.springframework.org/schema/util"</span>
+        <span class="na">xmlns:mongo=</span><span class="s">"http://www.springframework.org/schema/data/mongo"</span>
+        <span class="na">xsi:schemaLocation=</span><span class="s">"http://www.springframework.org/schema/data/mongo</span>
+<span class="s">          http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd</span>
+<span class="s">          http://www.springframework.org/schema/jdbc</span>
+<span class="s">          http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd</span>
+<span class="s">          http://schema.cloudfoundry.org/spring</span>
+<span class="s">          http://schema.cloudfoundry.org/spring/cloudfoundry-spring.xsd</span>
+<span class="s">          http://www.springframework.org/schema/beans</span>
+<span class="s">          http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span>
+<span class="s">          http://www.springframework.org/schema/util</span>
+<span class="s">          http://www.springframework.org/schema/util/spring-util-3.1.xsd"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"mongoTemplate"</span> <span class="na">class=</span><span class="s">"org.springframework.data.mongodb.core.MongoTemplate"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;constructor-arg</span> <span class="na">ref=</span><span class="s">"mongoDbFactory"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/bean&gt;</span>
+
+        <span class="nt">&lt;beans</span> <span class="na">profile=</span><span class="s">"default"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;mongo:db-factory</span> <span class="na">id=</span><span class="s">"mongoDbFactory"</span> <span class="na">dbname=</span><span class="s">"pwdtest"</span> <span class="na">host=</span><span class="s">"127.0.0.1"</span> <span class="na">port=</span><span class="s">"27017"</span> <span class="na">username=</span><span class="s">"test_user"</span> <span class="na">password=</span><span class="s">"efgh"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/beans&gt;</span>
+
+        <span class="nt">&lt;beans</span> <span class="na">profile=</span><span class="s">"cloud"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;cloud:mongo-db-factory</span> <span class="na">id=</span><span class="s">"mongoDbFactory"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/beans&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<p>Note that the <code>&lt;beans profile="value"&gt;</code> element is nested inside the standard root <code>&lt;beans&gt;</code> element.  The MongoDB connection factory in the <code>cloud</code> profile uses the <code>&lt;cloud:&gt;</code> namespace, the connection factory configuration in the <code>default</code> profile uses the <code>&lt;mongo:&gt;</code> namespace.   You can now deploy this application to the two different environments without making any manual changes to its configuration when you switch from one to the other.</p>
+
+<p>See the <a href="http://blog.springsource.com/2011/02/11/spring-framework-3-1-m1-released/">SpringSource Blog</a> for additional information about using Spring Profiles, a new feature in Spring Framework 3.1.</p>
+
+<h2 id="sending-email-from-spring-applications-deployed-to-cloud-foundry">Sending Email From Spring Applications Deployed to Cloud Foundry</h2>
+
+<p>In order to prevent spam and other abuse, SMTP is blocked from applications running in Cloud Foundry.  However, your applications can still send email when deployed to Cloud Foundry, as described in this section.</p>
+
+<p>Service providers, such as <a href="http://sendgrid.com">SendGrid</a>, can send email on your behalf via HTTP web services, which is an option you can use when deploying your application to Cloud Foundry.  If, however, you also run your application inside your datacenter, you might want to use your corporate SMTP servers in that case.  This is a good example of using <a href="#using-spring-profiles-to-conditionalize-cloud-foundry-configuration">Spring Profiles</a> to conditionalize how your application sends email, depending on where exactly the application happens to be deployed.  This makes your application portable to different environments without you having to manually update its configuration.</p>
+
+<p>The following snippet of a Spring application context shows how to specify that your application should use SendGrid to send email when the application is running in Cloud Foundry; note the use of the <code>cloud</code> profile:</p>
+
+<pre><code class="language-xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;beans</span>  <span class="na">xmlns=</span><span class="s">"http://www.springframework.org/schema/beans"</span>
+        <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span class="na">xmlns:cloud=</span><span class="s">"http://schema.cloudfoundry.org/spring"</span>
+
+    <span class="err">...</span>
+
+    <span class="err">&lt;beans</span> <span class="na">profile=</span><span class="s">"cloud"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;bean</span> <span class="na">name=</span><span class="s">"mailSender"</span> <span class="na">class=</span><span class="s">"example.SendGridMailSender"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"apiUser"</span> <span class="na">value=</span><span class="s">"youremail@domain.com"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"apiKey"</span> <span class="na">value=</span><span class="s">"secureSecret"</span> <span class="nt">/&gt;</span>
+       <span class="nt">&lt;/bean&gt;</span>
+    <span class="nt">&lt;/beans&gt;</span>
+
+   ...
+
+    <span class="c">&lt;!-- additional beans in your application --&gt;</span>
+
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<p>In the example, <code>example.SendGridMailSender</code> is the Spring bean that sends email using the SendGrid service provider; however, this bean will only be activated when your application is deployed to Cloud Foundry.  If your application is actually running inside your datacenter, then your default email server is used.</p>
+
+<h2 id="accessing-cloud-foundry-properties">Accessing Cloud Foundry Properties</h2>
+
+<p>Cloud Foundry exposes a number of application and service properties directly into its deployed applications.  Your deployed application can in turn consume these properties.   The properties exposed by Cloud Foundry include basic information about the application, such as its name and the Cloud provider, and detailed connection information for all services currently bound to the application.</p>
+
+<p>Service properties generally take one of the following forms:</p>
+
+<pre><code>    cloud.services.{service-name}.connection.{property}
+    cloud.services.{service-name}.{property}
+</code></pre>
+
+<p>where <code>{service-name}</code> refers to the name you gave the service when you bound it to your application at deploy time.  The specific connection properties that are available depend on the type of service; see the table at the end of this section for the complete list.</p>
+
+<p>For example, assume that in VMC you created a vFabric Postgres service called <code>my-postgres</code> and then bound it to your application; Cloud Foundry exposes the following properties about this service that your application in turn can consume:</p>
+
+<pre><code>    cloud.services.my-postgres.connection.host
+    cloud.services.my-postgres.connection.hostname
+    cloud.services.my-postgres.connection.name
+    cloud.services.my-postgres.connection.password
+    cloud.services.my-postgres.connection.port
+    cloud.services.my-postgres.connection.user
+    cloud.services.my-postgres.connection.username
+    cloud.services.my-postgres.plan
+    cloud.services.my-postgres.type
+</code></pre>
+
+<p>For convenience, if you have bound just <em>one</em> service of a given type to your application, Cloud Foundry creates an alias based on the service type instead of the service name. For example, if only one MySQL service is bound to an application, the properties will take the form <code>cloud.services.mysql.connection.{property}</code>.   Cloud Foundry uses the following aliases in this case:</p>
+
+<ul>
+<li><code>mysql</code></li>
+  <li><code>mongodb</code></li>
+  <li><code>postgresql</code></li>
+  <li><code>rabbitmq</code></li>
+  <li><code>redis</code></li>
+</ul><p>If you want to use these Cloud Foundry properties in your application, use a Spring property placholder inside of a <code>cloud</code> profile; Spring profiles are briefly described in <a href="#using-spring-profiles-to-conditionalize-cloud-foundry-configuration">Using Spring Profiles to Conditionalize Cloud Foundry Configuration</a>.</p>
+
+<p>For example, assume that you have bound a MySQL service called <code>spring-mysql</code> to your application, but your application requires a c3p0 connection pool instead of the connection pool provided by Cloud Foundry.   But you still want to use the same connection properties defined by Cloud Foundry for the MySQL service, in particular the username and password and JDBC URL.  The following Spring application context snippet shows how you might implement this:</p>
+
+<pre><code class="language-xml"><span class="nt">&lt;beans</span> <span class="na">profile=</span><span class="s">"cloud"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"c3p0DataSource"</span> <span class="na">class=</span><span class="s">"com.mchange.v2.c3p0.ComboPooledDataSource"</span> <span class="na">destroy-method=</span><span class="s">"close"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"driverClass"</span> <span class="na">value=</span><span class="s">"com.mysql.jdbc.Driver"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"jdbcUrl"</span>
+                <span class="na">value=</span><span class="s">"jdbc:mysql://${cloud.services.spring-mysql.connection.host}:${cloud.services.spring-mysql.connection.port}/${cloud.services.spring-mysql.connection.name}"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"user"</span> <span class="na">value=</span><span class="s">"${cloud.services.spring-mysql.connection.username}"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"password"</span> <span class="na">value=</span><span class="s">"${cloud.services.spring-mysql.connection.password}"</span> <span class="nt">/&gt;</span>
+   <span class="nt">&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span></code></pre>
+
+<p>The following table lists all the application and service properties that Cloud Foundry exposes to deployed applications.  In the property names, <code>{service-name}</code> refers to the actual name of the bound service.</p>
+
+<table class="std">
+<tr>
+<th>Property</th>
+   <th>Associated Service Type</th>
+   <th>Description</th>
+ </tr>
+<tr>
+<td>cloud.application.name</td>
+   <td>Not applicable.</td>
+   <td>The name of the application.</td>
+ </tr>
+<tr>
+<td>cloud.provider.url</td>
+   <td>Not applicable.</td>
+   <td>The URL of the cloud hosting your application, such as <tt>cloudfoundry.com</tt>.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.db</td>
+   <td>MongoDB</td>
+   <td>Name of the database that Cloud Foundry created.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.host</td>
+   <td>MongoDB</td>
+   <td>Name or IP address of the host on which the MongoDB server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.hostname</td>
+   <td>MongoDB</td>
+   <td>Name or IP address of the host on which the MongoDB server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.name</td>
+   <td>MongoDB</td>
+   <td>Name of the user that connects to the MongoDB database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.password</td>
+   <td>MongoDB</td>
+   <td>Password of the user that connects to the MongoDB database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.port</td>
+   <td>MongoDB</td>
+   <td>Listen port of the MongoDB server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.username</td>
+   <td>MongoDB</td>
+   <td>Name of the user that connects to the MongoDB database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.plan</td>
+   <td>MongoDB</td>
+   <td>Pay plan for the service, such as <tt>free</tt>.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.type</td>
+   <td>MongoDB</td>
+   <td>Name and version of the MongoDB server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.name</td>
+   <td>MySQL</td>
+   <td>Name of the MySQL database that Cloud Foundry created.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.host</td>
+   <td>MySQL</td>
+   <td>Name or IP address of the host on which the MySQL server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.hostname</td>
+   <td>MySQL</td>
+   <td>Name or IP address of the host on which the MySQL server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.port</td>
+   <td>MySQL</td>
+   <td>Listen port of the MySQL server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.user</td>
+   <td>MySQL</td>
+   <td>Name of the user that connects to the MySQL database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.username</td>
+   <td>MySQL</td>
+   <td>Name of the user that connects to the MySQL database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.password</td>
+   <td>MySQL</td>
+   <td>Password of the user that connects to the MySQL database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.plan</td>
+   <td>MySQL</td>
+   <td>Pay plan for the service, such as <tt>free.
+ 
+ <tr>
+<td>cloud.services.{<i>service-name</i>}.type</td>
+   <td>MySQL</td>
+   <td>Name and version of the MySQL server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.name</td>
+   <td>vFabric Postgres</td>
+   <td>Name of the vFabric Postgres database that Cloud Foundry created.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.host</td>
+   <td>vFabric Postgres</td>
+   <td>Name or IP address of the host on which the vFabric Postgres server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.hostname</td>
+   <td>vFabric Postgres</td>
+   <td>Name or IP address of the host on which the vFabric Postgres server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.port</td>
+   <td>vFabric Postgres</td>
+   <td>Listen port of the vFabric Postgres server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.user</td>
+   <td>vFabric Postgres</td>
+   <td>Name of the user that connects to the vFabric Postgres database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.username</td>
+   <td>vFabric Postgres</td>
+   <td>Name of the user that connects to the vFabric Postgres database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.password</td>
+   <td>vFabric Postgres</td>
+   <td>Password of the user that connects to the vFabric Postgres database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.plan</td>
+   <td>vFabric Postgres</td>
+   <td>Pay plan for the service, such as <tt>free</tt>.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.type</td>
+   <td>vFabric Postgres</td>
+   <td>Name and version of the vFabric Postgres server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.url</td>
+   <td>RabbitMQ</td>
+   <td>URL used to connect to the AMPQ broker.  URL includes the host, port, username, and so on.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.plan</td>
+   <td>RabbitMQ</td>
+   <td>Pay plan for the service, such as <tt>free.
+ 
+ <tr>
+<td>cloud.services.{<i>service-name</i>}.type</td>
+   <td>RabbitMQ</td>
+   <td>Name and version of the RabbitMQ server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.host</td>
+   <td>Redis</td>
+   <td>Name or IP address of the host on which the Redis server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.hostname</td>
+   <td>Redis</td>
+   <td>Name or IP address of the host on which the Redis server is running.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.port</td>
+   <td>Redis</td>
+   <td>Listen port of the Redis server.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.name</td>
+   <td>Redis</td>
+   <td>Name of the user that connects to the Redis database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.connection.password</td>
+   <td>Redis</td>
+   <td>Password of the user that connects to the Redis database.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.plan</td>
+   <td>Redis</td>
+   <td>Pay plan for the service, such as <tt>free</tt>.</td>
+ </tr>
+<tr>
+<td>cloud.services.{<i>service-name</i>}.type</td>
+   <td>Redis</td>
+   <td>Name and version of the Redis server.</td>
+ </tr></tt>
+</td>
+</tr></tt>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='container' id='footer'>
+<div class='site-wrap'>
+<div class='row'>
+<div class='span-3 social-icons'>
+<a class='twitter replaced' href='http://twitter.com/cloudfoundry' rel='external' target='_blank'>Twitter</a>
+<a class='facebook replaced' href='http://facebook.com/cloudfoundry' rel='external' target='_blank'>Facebook</a>
+<a class='youtube replaced' href='http://www.youtube.com/cloudfoundry' rel='external' target='_blank'>YouTube</a>
+</div>
+<div class='prepend-2 span-5'>
+<p>
+<a href='http://www.cloudfoundry.com/faq'>FAQ</a>
+|
+<a href='http://stackoverflow.com/questions/tagged/cloudfoundry' rel='external'>Forums</a>
+|
+<a href='http://blog.cloudfoundry.com' rel='external'>Blog</a>
+|
+<a href='http://www.cloudfoundry.com/jobs'>Jobs</a>
+|
+<a href='http://www.cloudfoundry.com/legal'>Legal</a>
+|
+<a href='http://www.cloudfoundry.com/terms'>Terms</a>
+|
+<a href='http://www.vmware.com/help/privacy.html' rel='external' target='_blank'>Privacy</a>
+</p>
+</div>
+<div class='span-5 last right'>
+<p>Copyright &copy; 2012 VMware, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22181585-10']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    
+    $(document).ready(function() {
+      $('#social-share').dcSocialShare({
+        buttonSize: 'horizontal',
+        buttons: 'facebook,twitter,plusone,linkedin',
+        location: 'top',
+        align: 'right',
+        offsetLocation: 260,
+        offsetAlign: 100,
+        width: 80,
+        center: true,
+        centerPx: 600,
+        disableFloat: true,
+        tabText: '',
+        twitterId: 'cloudfoundry'
+      });
+    });
+  //]]>
+</script>
+</body>
+</html>
