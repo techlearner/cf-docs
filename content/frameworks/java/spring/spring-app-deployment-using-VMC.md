@@ -22,12 +22,13 @@ Before you begin this tutorial, you should done with:
 ## Deploy the App on Cloud Foundry Using VMC
 Deployment to Cloud Foundry can be done in two simple steps:
 
-+  Create war file
-+  Push the war file using `vmc`
+**1**.  Create war file
+
+**2**.  Push the war file using `vmc`
 
 Commands below show the exact commands and output when the app is deployed:
 
-Go to your project work space and issue the following commands.
+**Step 1**.  Go to your project work space and issue the following commands.
 
 ``` bash
 $ mvn war:war
@@ -53,7 +54,7 @@ $ mvn war:war
 [INFO] Final Memory: 6M/124M
 [INFO] ------------------------------------------------------------------------
 ```
-* Now point vmc target to `http://api.cloudfoundry.cpm` and login to cloudfoundry using your credentials.
+**Step 2**.  Now point vmc target to `http://api.cloudfoundry.cpm` and login to cloudfoundry using your credentials.
 
 ```bash
 $ vmc target http://api.cloudfoundry.com

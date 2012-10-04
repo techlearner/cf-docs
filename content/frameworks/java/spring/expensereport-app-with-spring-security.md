@@ -1,6 +1,6 @@
 ---
 title: Spring MVC App with Spring Security
-description: Spring security added to ExpenseReport App.
+description: Adding Spring security to the ExpenseReport App.
 tags:
     - Spring
     - STS
@@ -10,31 +10,30 @@ tags:
 ---
 
 ## Introduction
-Spring Security provides authentication and access services for J2EE-based enterprise software applications.
+Spring Security is a customizable authentication and access service framework for J2EE-based enterprise software applications.
 
 ## Prerequisites
-Before you begin this tutorial, you should be familiar with:
+Before you begin this tutorial, you should:
 
-1.  Working with STS or Eclipse IDE.
+1.  Be familiar with working with STS or Eclipse IDE.
 
-2.  Assuming previous exercise get completed.
+2.  Have completed previous exercises.
 
-## Add Spring Security to ExpenseReport App
-This section provides details on how to get integrate ExpenseReport App with Spring Security.
-These are the required jars that we have to add in pom.xml,
+## Adding Spring Security to ExpenseReport App
+This section will teach you how to integrate Spring Security in to the ExpenseReport Application. These are the required jars to be added in pom.xml,
 
   + spring-security-core.jar
   + spring-security-web.jar
   + spring-security-config.jar
 
-## Enable Spring Security:
-To enable Spring security we need to add the following steps:
+## Enabling Spring Security:
+Go over the following steps to enable Spring security on our app,
 
-1.     Add a DelegatingFilterProxy in `src/main/webapp/WEB-INF/web.xml`
+1.     Add a **DelegatingFilterProxy** in `src/main/webapp/WEB-INF/web.xml`
 
 2.     Create a custom XML configuration named spring-security.xml in `src/main/resources`
 
-In the web.xml declare an instance of a DelegatingFilterProxy. This will filter the requests based on the declared url-pattern.
+In the web.xml declare an instance of a DelegatingFilterProxy. This will filter the requests depending on the declared url-pattern.
 
 ```xml
 <filter>
@@ -47,7 +46,7 @@ In the web.xml declare an instance of a DelegatingFilterProxy. This will filter 
 </filter-mapping>
 ```
 
-In the spring-security.xml,define HTTP security configuration by adding http tag.And define which url pattern to intecept. Add "jdbc-user service" tag and define the query to get the data from database.
+In the spring-security.xml,define HTTP security configuration by adding http tag. Also define the url pattern to be intecepted. Add "jdbc-user service" tag and define the query to get the user and authorities data from database.
 
 ```xml
 <beans:beans xmlns="http://www.springframework.org/schema/security"
@@ -96,34 +95,34 @@ In the spring-security.xml,define HTTP security configuration by adding http tag
 
 ```
 
-1.  To access the application, the user must have either `ROLE_USER`,`ROLE_MANAGER` access so to validate this we have added `<intercept-url pattern="/" access="hasAnyRole('ROLE_USER','ROLE_MANAGER')"/>`.
+1.  To access the application, the user must be either `ROLE_USER` or `ROLE_MANAGER`. To validate this function we have added `<intercept-url pattern="/" access="hasAnyRole('ROLE_USER','ROLE_MANAGER')"/>`.
 
-2.  Manager only can approve the expenses so we have restricted that access to only Manager by giving  `<intercept-url pattern="/loadApprovalExpenses" access="hasRole('ROLE_MANAGER')"/>`.
+2.  Since only the manager is allowed to approve expenses, to restrict access to him alone, provided `<intercept-url pattern="/loadApprovalExpenses" access="hasRole('ROLE_MANAGER')"/>`.
 
-To load this file as part of configuration add `@ImportResource({ "classpath:spring-security.xml"})` in `ComponentConfig` class.
+To load this file as a part of configuration add **@ImportResource({ "classpath:spring-security.xml"})** in `ComponentConfig` class.
 
-Create `Logincontroller` in `com.springsource.html5expense.contoller` package and add mapping for login,logout,loginfailed,signup.The login.jsp has two input elements for username and password as j_username and j_password.These are spring's placeholder for the username and password respectively.
+Create `Logincontroller` in `com.springsource.html5expense.contoller` package and add mapping for login,logout,loginfailed,signup. The login.jsp has two input elements for username and password as j_username and j_password. These are spring's placeholder for the username and password respectively.
 when the form is submitted ,it will be sent to the following action URL:j_spring_security_check.
 
-## Check point
-Now build the app and test it locally.
-Select `Run As -> Maven clean`
+## Check Point
+Let us build the app and test it locally.
+Select **Run As -> Maven clean**
 
 ![maven_clean.png](/images/spring_tutorial/maven_clean.png)
 
-Once Maven clean completed select` Run As -> Maven install`.It will download dependencies from pom.xml.
+Once Maven clean completes select **Run As -> Maven install**. Dependencies will be downloaded from pom.xml.
 
 ![maven_install.png](/images/spring_tutorial/maven_install.png)
 
-Select `Run As -> Maven build`
+Select **Run As -> Maven build**
 
 ![maven_build.png](/images/spring_tutorial/maven_build.png)
 
-And give Maven goal as , `tomcat:run`
+And give Maven goal as , **tomcat:run**
 
 ![maven_run.png](/images/spring_tutorial/maven_run.png)
 
-Once server starts completed. Open your browser and enter application url : `http://localhost:8080/html5expense/createNewExpense` ,this time browser will not open a form to create new expense. It will automatically redirect to login page.
+Once server start completes - open your browser and enter application url : `http://localhost:8080/html5expense/createNewExpense` ,this time browser will not open a form to create new expense. It will automatically redirect to login page.
 
 ![STS Fabric Server.png](/images/spring_tutorial/localhost_login.png)
 

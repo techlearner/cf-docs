@@ -13,14 +13,14 @@ This section provides details on how to get started with STS (SpringSource Tool 
 
 ## Create Spring MVC Template Project
 Please open your STS and select dashboard by clicking,
-    `Help -> Dashboard`
+    **Help -> Dashboard**
 
-From the dashboard view select Spring Template Project.Window shown below opens up.
+From the dashboard view select **Spring Template Project**. Window shown below opens up.
 
 ![Spring MVC Template Project](/images/spring_tutorial/spring_template_project_mvc.png)
 
 
-then choose `Spring MVC Project`.
+Choose **Spring MVC Project**.
 The first time you do it, STS will ask you to download some extra elements from the Internet.
 
 ![spring_template_project_mvc_download.png](/images/spring_tutorial/spring_template_project_mvc_download.png)
@@ -28,19 +28,19 @@ The first time you do it, STS will ask you to download some extra elements from 
 You’ll need to give your project name as `expensereport` and top-level package as `com.springsource.html5expense`
 
 
-Click on `Finish` – and STS will create the project.
+Click on **Finish** – and STS will create the project.
 
-Before run the project.Select `Run As -> Maven clean`
+Before run the project,select **Run As -> Maven clean**
 
 ![maven_clean.png](/images/spring_tutorial/maven_clean.png)
 
-Once Maven clean completes, select `Run As -> Maven install`. It will download dependencies from pom.xml.
+Once Maven clean completes, select **Run As -> Maven install**. Dependencies will be downloaded from pom.xml.
 
 ![maven_install.png](/images/spring_tutorial/maven_install.png)
 
 ## Troubleshoot
-  After this step if you have any errors,
-1.  Check whether you are behind proxy server. If then change your maven `settings.xml` to point your proxy server,
+After this step if you have any errors,
+ Check whether you are behind proxy server. If then change your maven `settings.xml` to point your proxy server,
 
 ```xml
 <settings>
@@ -58,13 +58,11 @@ Once Maven clean completes, select `Run As -> Maven install`. It will download d
 </settings>
 ```
 
-2.  If you are not behind any proxy server but your maven `setting.xml` points to any proxy then remove the proxy configuration from maven `settings.xml`.
-
-Now Select `Run As -> Maven build`
+Now Select **Run As -> Maven build**
 
 ![maven_build.png](/images/spring_tutorial/maven_build.png)
 
-And give Maven goal as , `tomcat:run`
+And give Maven goal as , **tomcat:run**
 
 ![maven_run.png](/images/spring_tutorial/maven_run.png)
 

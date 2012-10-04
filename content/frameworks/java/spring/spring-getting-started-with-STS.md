@@ -25,14 +25,14 @@ Before you get started, you need the following:
 ## Overview
 The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform. A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.[for more details visit](http://www.springsource.org/spring-framework).
 
-+ Chapter1 :[Create Hello world Spring MVC Project](/frameworks/java/spring/springmvc-template-project.html)
++ Chapter 1 :[Create Hello world Spring MVC Project](/frameworks/java/spring/springmvc-template-project.html)
    
-+ Chapter2 :[Create an Expense Reporting App](/frameworks/java/spring/spring-expensereport-app-tutorial.html)
++ Chapter 2 :[Create an Expense Reporting App](/frameworks/java/spring/spring-expensereport-app-tutorial.html)
 
-+ Chapter3 :[Add Spring Security to ExpenseReport App](/frameworks/java/spring/expensereport-app-with-spring-security.html)
++ Chapter 3 :[Add Spring Security to ExpenseReport App](/frameworks/java/spring/expensereport-app-with-spring-security.html)
 
-+ Chapter4 :[Deploy the App on Cloud Foundry Using STS](/frameworks/java/spring/spring-app-deployment-using-STS.html)
++ Chapter 4 :[Deploy the App on Cloud Foundry Using STS](/frameworks/java/spring/spring-app-deployment-using-STS.html)
 
-+ Chapter5 :[Deploy the App on Cloud Foundry Using VMC](/frameworks/java/spring/spring-app-deployment-using-VMC.html)
++ Chapter 5 :[Deploy the App on Cloud Foundry Using VMC](/frameworks/java/spring/spring-app-deployment-using-VMC.html)
 
  [                                                                         Next==>](/frameworks/java/spring/springmvc-template-project.html)
